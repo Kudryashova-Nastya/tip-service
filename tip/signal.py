@@ -5,7 +5,7 @@ from django.dispatch import receiver
 from .models import Staff
 
 
-@receiver(post_save, sender=User)
-def create_profile(sender, instance, created, **kwargs):  # создаёт User для пользователя
-    if created:
-        Staff.objects.create(user=instance)
+# @receiver(post_save, sender=User)
+# def create_profile(sender, instance, created, **kwargs):  # создаёт User для пользователя
+#     if created:
+#         Staff.objects.create(user=instance)
