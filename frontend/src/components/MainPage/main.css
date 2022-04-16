@@ -1,0 +1,466 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Marmelad&family=Montserrat:wght@400;500;600;800&display=swap');
+/*@import url('https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css');*/
+
+/*--------------------sections--------------------*/
+.section
+{
+    height: 100vh;
+}
+
+.section:nth-child(1)
+{
+    background-color: #F0EDE8;
+    position: relative;
+}
+
+.section:nth-child(2)
+{
+    background-color: #DFDCCF;
+}
+
+.section:nth-child(3)
+{
+    background-color: #E5DFDB;
+    position: relative;
+}
+
+.section:nth-child(4)
+{
+    background-color: #F0EDE8;
+}
+
+/*--------------------section 1--------------------*/
+.button-login
+{
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+.text-login
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 3vh;
+    color: #787774;
+    position: absolute;
+    right: 2em;
+    top: -0.1em;
+}
+
+.img-login
+{
+    height: 4vh;
+}
+
+.img-logo
+{
+    height: 40vh;
+    max-height: 48vw;
+    margin-left: 8vw;
+}
+
+.img-giving-hand
+{
+    height: 20vh;
+    max-height: 18vw;
+}
+
+.logo-and-hand
+{
+    position: absolute;
+    top: 5vh;
+    left: 3vw;
+}
+
+.text-logo-el:nth-child(1)
+{
+    color: #76A34F;
+}
+
+.text-logo-el:nth-child(2)
+{
+    color: #939598;
+}
+
+.text-logo-el:nth-child(3)
+{
+    color: #8F7962;
+}
+
+.text-logo
+{
+    font-family: 'Amatic SC', cursive;
+    font-size: 15vw;
+}
+
+.img-green-tea
+{
+    transform: rotate(35deg);
+    height: 10vh;
+    max-height: 7vw;
+    margin-left: 35vw;
+}
+
+.name-and-leaf
+{
+    position: absolute;
+    top: 9em;
+    right: 12vw;
+}
+
+.img-tips-service
+{
+    height: 15vh;
+    max-height: 15vw;
+    float: right;
+}
+
+.text-tips-service
+{
+    font-family: 'Marmelad', sans-serif;
+    font-size: 2em;
+    color: #8F7962;
+}
+
+.tips-service-group
+{
+    position: absolute;
+    bottom: 5vw;
+    right: 20vw;
+}
+
+.button-transfer-money
+{
+    background-color: #C1D1AA;
+    border: none;
+    border-radius: 1.5em;
+    height: 6em;
+    width: 16em;
+    position: absolute;
+    bottom: 2em;
+    left: 2em;
+}
+
+.img-transfer-money
+{
+    height: 3em;
+    float: right;
+    position: relative;
+    left: -1.5em;
+    top: 1em;
+}
+
+.text-transfer-money
+{
+    font-family: 'Amatic SC', cursive;
+    font-size: 3em;
+    color: #625C60;
+}
+
+/*--------------------section 2--------------------*/
+h1
+{
+    font-family: 'Marmelad', sans-serif;
+    font-size: 5vh;
+    color: #625C60;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.parent
+{
+    display: flex;
+    flex: 1;
+    margin-top: 10vh;
+    flex-wrap: wrap;
+}
+
+.column
+{
+    display: flex;
+    flex: 1;
+    text-align: center;
+    padding: 5vw;
+}
+
+figure
+{
+    display: block;
+    margin: 0 auto;
+}
+
+.img-column
+{
+    height: 20vh;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5vh;
+    display: flex;
+    flex: 1;
+}
+
+.text-column
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 2.5vh;
+    color: #625C60;
+}
+
+/*--------------------section 3--------------------*/
+.button-registration
+{
+    background-color: #C1D1AA;
+    border: none;
+    border-radius: 20px;
+    height: 100px;
+    width: 300px;
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+}
+
+.text-registration
+{
+    font-family: 'Amatic SC', cursive;
+    font-size: 45px;
+    color: #625C60;
+    position: relative;
+    top: 15px;
+    left: -20px;
+}
+
+.img-registration
+{
+    height: 50px;
+    position: relative;
+    left: 230px;
+    bottom: 40px;
+}
+
+.line
+{
+    width: 2px;
+    height: 40vh;
+    background-color: #625C60;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.reg-steps-num
+{
+    position: absolute;
+    top: 35vh;
+    left: 12vw;
+}
+
+.reg-steps
+{
+    position: absolute;
+    top: 35vh;
+    left: 15vw;
+}
+
+.step-num
+{
+    margin-bottom: 6vh;
+    font-family: 'Amatic SC', cursive;
+    font-size: 45px;
+    color: #625C60;
+}
+
+.step
+{
+    margin-bottom: 8vh;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 2.8vh;
+    color: #625C60;
+    width: 28vw;
+    position: relative;
+}
+
+.done
+{
+    color: #76A34F;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 4vh;
+    position: absolute;
+    top: 35vh;
+    right: 35vw;
+}
+
+.done-block
+{
+    position: absolute;
+    top: 45vh;
+    right: 14vw;
+    width: 28vw;
+}
+
+.done-details
+{
+    margin-bottom: 6vh;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 2.8vh;
+    color: #625C60;
+}
+
+.tips-hand-img
+{
+    height: 15vh;
+    position: absolute;
+    bottom: 13vh;
+    right: 3vw;
+    transform: rotate(-14.24deg);
+}
+
+.tips-jar-img
+{
+    height: 15vh;
+    position: absolute;
+    bottom: 5vh;
+    right: 10vw;
+    transform: rotate(21.05deg);
+}
+
+/*--------------------section 4--------------------*/
+.img-qr
+{
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input
+{
+    background-color: #C1D1AA;
+    border: none;
+    border-radius: 20px;
+    height: 50px;
+    width: 450px;
+    padding: 5px 20px;
+    margin-bottom: 10px;
+}
+
+label
+{
+    display:block;
+    color: #625C60;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+form
+{
+    width: 550px;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+    text-align: center;
+}
+
+input::placeholder
+{
+    color: #787774;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.button-form
+{
+    display: block;
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+    background-color: #DFDCCF;
+    border: none;
+    border-radius: 20px;
+    height: 80px;
+    width: 175px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+}
+
+/*--------------------mobile phones--------------------*/
+@media (min-width: 100px) and (max-width: 500px) {
+    .text-login
+    {
+        font-size: 2vh;
+    }
+    .img-login
+    {
+        height: 3vh;
+    }
+    .img-logo
+    {
+        height: 30vh;
+    }
+    .img-giving-hand
+    {
+        height: 10vh;
+    }
+    .logo-and-hand
+    {
+        top: 3vh;
+    }
+    .name-and-leaf
+    {
+        top: 38vh;
+    }
+    .text-logo
+    {
+        font-size: 25vw;
+    }
+    .img-green-tea
+    {
+        height: 12vh;
+        margin-left: 60vw;
+    }
+    .text-tips-service
+    {
+        font-size: 2vh;
+    }
+    .tips-service-group
+    {
+        bottom: 30vh;
+        right: 20vw;
+    }
+    .button-transfer-money
+    {
+        left: calc(50vw - 8em);
+    }
+    h1
+    {
+        font-size: 2.5vh;
+        width: 60%;
+    }
+    .parent
+    {
+        margin-top: 3vh;
+    }
+    .column
+    {
+        min-width: 100vw;
+    }
+    .img-column
+    {
+        width: 28vw;
+        height: auto;
+        margin-bottom: 2.5vh;
+    }
+    .text-column
+    {
+        font-size: 2vh;
+    }
+}
+
+/*--------------------mobile phones--------------------*/
