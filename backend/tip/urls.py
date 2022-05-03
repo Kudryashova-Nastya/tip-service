@@ -9,5 +9,5 @@ urlpatterns = [
 ]
 
 router = DefaultRouter()
-router.register(r'leader', LeaderInfoModelViewSet, basename='leader')
+router.register(r'leader', LeaderModelViewSet, basename='leader')
 urlpatterns += router.urls

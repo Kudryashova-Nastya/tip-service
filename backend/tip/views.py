@@ -1,13 +1,15 @@
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import Group
+from django.forms import forms
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 
-from . import models as m
-from .serializers import OrganizationSerializer, LeaderSerializer
+from .models import *
+from .forms import LeaderModelForm
+from .serializers import *
 
 
 # class RegistrationLeaderViewSet(viewsets.ModelViewSet):
@@ -40,12 +42,31 @@ from .serializers import OrganizationSerializer, LeaderSerializer
 #         return render(request, 'registration.html', context)
 
 
-class OrganizationReadOnly(viewsets.ReadOnlyModelViewSet):  # GET запрос на все и по id
-    queryset = m.Organization.objects.all()
+class OrganizationReadOnly(viewsets.ReadOnlyModelViewSet):  # list, retrieve
+    queryset = Organization.objects.all()
     serializer_class = OrganizationSerializer
 
 
-class LeaderInfoModelViewSet(viewsets.ModelViewSet):  # полный crud
+class LeaderModelViewSet(viewsets.ModelViewSet):  # crud, patch, head
     serializer_class = LeaderSerializer
-    queryset = m.Leader.objects.all()
+    queryset = Leader.objects.all()
 
+    def create(self, request, *args, **kwargs):  # return `Response`, `HttpResponse` or `HttpStreamingResponse`
+        form_leader = LeaderModelForm(request.POST or None)
+        form_user = UserModelForm(request.POST or None)
+        if form.is_valid():
+            new_user = form.save(commit=False)
+            new_user.phone = form.cleaned_data['phone']
+            new_user.first_name = form.cleaned_data['first_name']
+            new_user.last_name = form.cleaned_data['last_name']
+            new_user.save()
+            new_user.set_password(form.cleaned_data['password'])
+            new_user.save()
+            Leader.objects.create(
+                user=new_user,
+                phone=form.cleaned_data['phone'],
+                first_name=form.cleaned_data['first_name'],
+                last_name=form.cleaned_data['last_name']
+            )
+            group = Group.objects.get(name='Leader')
+            new_user.groups.add(group)
