@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Staff, Organization
+from .models import Staff, Organization, Leader
 
 
 class UserProfileSerializer(serializers.ModelSerializer):
@@ -13,5 +13,11 @@ class UserProfileSerializer(serializers.ModelSerializer):
 class OrganizationSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Organization
+		fields = '__all__'
+
+
+class LeaderSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Leader
 		fields = '__all__'
 

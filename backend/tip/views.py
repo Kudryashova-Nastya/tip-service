@@ -7,7 +7,7 @@ from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 
 from . import models as m
-from .serializers import OrganizationSerializer
+from .serializers import OrganizationSerializer, LeaderSerializer
 
 
 # class RegistrationLeaderViewSet(viewsets.ModelViewSet):
@@ -40,21 +40,12 @@ from .serializers import OrganizationSerializer
 #         return render(request, 'registration.html', context)
 
 
-class OrganizationViewSet(viewsets.ViewSet):
-
-    def list(self, request):
-        queryset = m.Organization.objects.all()
-        serializer = OrganizationSerializer(queryset, many=True)
-        return Response(serializer.data)
-
-    def retrieve(self, request, pk=None):
-        queryset = m.Organization.objects.all()
-        organization = get_object_or_404(queryset, pk=pk)
-        serializer = OrganizationSerializer(queryset, many=True)
-        return Response(serializer.data)
-
-
 class OrganizationReadOnly(viewsets.ReadOnlyModelViewSet):  # GET запрос на все и по id
     queryset = m.Organization.objects.all()
     serializer_class = OrganizationSerializer
+
+
+class LeaderInfoModelViewSet(viewsets.ModelViewSet):  # полный crud
+    serializer_class = LeaderSerializer
+    queryset = m.Leader.objects.all()
 
