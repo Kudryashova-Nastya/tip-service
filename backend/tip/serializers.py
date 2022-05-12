@@ -1,9 +1,8 @@
-from django.contrib.auth.models import User
 from rest_framework import serializers
-from .models import Staff, Organization, Leader
+from .models import *
 
 
-class UserProfileSerializer(serializers.ModelSerializer):
+class StaffSerializer(serializers.ModelSerializer):
 	user = serializers.StringRelatedField(read_only=True)
 
 	class Meta:
@@ -22,3 +21,14 @@ class LeaderSerializer(serializers.ModelSerializer):
 		model = Leader
 		fields = '__all__'
 
+
+class BranchSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Branch
+		fields = '__all__'
+
+
+class PaymentSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Payment
+		fields = '__all__'
