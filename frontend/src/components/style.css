@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Seymour+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Marmelad&family=Seymour+One&display=swap');
-/*@tailwind base;*/
-/*@tailwind components;*/
-/*@tailwind utilities;*/
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
 
 
 body{
     background-color: #F0EDE8;
 }
 
-button{
+.button-loginPage{
     background-color: #BBB1A3;
     color: #625C60;
 }
 
-button:hover{
+.button-loginPage:hover{
     background-color: #625C60;
     color: #BBB1A3;
 }

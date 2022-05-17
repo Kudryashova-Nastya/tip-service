@@ -126,8 +126,8 @@ class MainPage extends Component {
                         </div>
 
                         <button type="submit" className="button-form">
-                            <span className="text-logo-el">Дать</span>
-                            <span className="text-logo-el">на</span>
+                            <span className="text-logo-el">Дать </span>
+                            <span className="text-logo-el">на </span>
                             <span className="text-logo-el">Чай</span>
                         </button>
                     </form>

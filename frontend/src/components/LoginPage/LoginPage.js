@@ -9,13 +9,13 @@ class LoginPage extends Component {
                 <div className='w-full grid grid-cols-1 md:grid-cols-12 mt-5'>
                     <div className="w-full grid grid-cols-1 col-start-2 col-span-1">
                         <button type="submit"
-                                className="group relative flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2">
+                                className="button-loginPage group relative flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2">
                             <Link to="/">Назад</Link>
                         </button>
                     </div>
                 </div>
-                <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-                    <div className="max-w-md w-full space-y-8">
+                <div className="min-h-full flex justify-center py-12 px-4 sm:px-6 lg:px-8">
+                    <div>
                         <div>
                             <img className="mx-auto h-20 w-auto" src={require('../../media/logo-main.png')} alt="Workflow"/>
                             <h1 className="mt-6 text-center text-3xl font-extrabold">
@@ -32,7 +32,7 @@ class LoginPage extends Component {
                                 <div>
                                     <label htmlFor="username" className="sr-only">Логин</label>
                                     <input id="login" name="username" type="login" autoComplete="login" required
-                                           className="appearance-none rounded-none relative block w-full px-3 py-2 border placeholder-gray-500 rounded-t-md focus:outline-none focus:z-10 sm:text-sm"
+                                           className="appearance-none w-full relative block px-3 py-2 border placeholder-gray-500 rounded-md focus:outline-none focus:z-10 sm:text-sm"
                                            placeholder="Логин"/>
                                 </div>
                                 <div>
@@ -40,7 +40,7 @@ class LoginPage extends Component {
                                     <input id="password" name="password" type="password"
                                            autoComplete="current-password"
                                            required
-                                           className="appearance-none rounded-none relative block w-full px-3 py-2 border placeholder-gray-500 rounded-b-md focus:outline-none focus:z-10 sm:text-sm"
+                                           className="appearance-non w-full relative block px-3 py-2 border placeholder-gray-500 rounded-md focus:outline-none focus:z-10 sm:text-sm"
                                            placeholder="Пароль"/>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@ class LoginPage extends Component {
                             {/*<div className="mb-3">{{f.errors}}</div>*/}
                             <div>
                                 <button type="submit"
-                                        className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2">
+                                        className="button-loginPage group relative w-full flex justify-center py-2 px-4 border text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2">
                                     <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                                       <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                                            fill="currentColor"

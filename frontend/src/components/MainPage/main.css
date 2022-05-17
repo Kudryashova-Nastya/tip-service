@@ -138,8 +138,8 @@
     height: 6em;
     width: 16em;
     position: absolute;
-    bottom: 2em;
-    left: 2em;
+    bottom: 1em;
+    left: 7em;
 }
 
 .img-transfer-money
@@ -230,8 +230,8 @@ figure
     height: 6em;
     width: 18em;
     position: absolute;
-    bottom: 2em;
-    left: 2em;
+    bottom: 1em;
+    left: 4em;
 }
 
 .text-registration
@@ -396,7 +396,7 @@ input::placeholder
 {
     display: block;
     font-family: 'Amatic SC', cursive;
-    font-size: 3em;
+    font-size: 2em;
     background-color: #DFDCCF;
     border: none;
     border-radius: 0.5em;
