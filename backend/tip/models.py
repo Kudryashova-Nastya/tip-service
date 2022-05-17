@@ -10,7 +10,6 @@ class Staff(models.Model):
     card_number = models.CharField(verbose_name="Номер карты", max_length=20, null=True, unique=True)
     avatar = models.ImageField(verbose_name="Аватар", null=True, blank=True)
 
-    @property
     def __str__(self):
         return f'{self.last_name}, {self.first_name}'
 

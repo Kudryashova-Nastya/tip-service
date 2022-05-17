@@ -4,8 +4,8 @@ from .serializers import *
 
 
 class OrganizationReadOnly(viewsets.ReadOnlyModelViewSet):  # list, retrieve
-    queryset = Organization.objects.all()
     serializer_class = OrganizationSerializer
+    queryset = Organization.objects.all()
 
 
 class LeaderModelViewSet(viewsets.ModelViewSet):  # crud, patch, head
@@ -20,9 +20,9 @@ class BranchModelViewSet(viewsets.ModelViewSet):  # crud, patch, head
 
 class StaffModelViewSet(viewsets.ModelViewSet):  # crud, patch, head
     serializer_class = StaffSerializer
-    queryset = Branch.objects.all()
+    queryset = Staff.objects.all()
 
 
 class PaymentModelViewSet(viewsets.ModelViewSet):  # crud, patch, head
     serializer_class = PaymentSerializer
-    queryset = Branch.objects.all()
+    queryset = Payment.objects.all()
