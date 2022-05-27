@@ -15,14 +15,14 @@ class LoginPage extends Component {
                     </div>
                 </div>
                 <div className="min-h-full flex justify-center py-12 px-4 sm:px-6 lg:px-8">
-                    <div>
+                    <div className="w-full">
                         <div>
                             <img className="mx-auto h-20 w-auto" src={require('../../media/logo-main.png')} alt="Workflow"/>
                             <h1 className="mt-6 text-center text-3xl font-extrabold">
                                 Авторизация
                             </h1>
                         </div>
-                        <form className="mt-8 space-y-6" action="#" method="POST">
+                        <form className="mt-8 space-y-6 w-1/3" action="#" method="POST">
                             {/*{% csrf_token %}*/}
                             {/*{% if form.non_field_errors %}*/}
                             {/*<div className="alert alert-dismissible alert-danger">{{form.non_field_errors}}</div>*/}
