@@ -11,7 +11,9 @@ class MainPage extends Component {
                 <div className="section">
                     <button className="button-login">
                         <Link to="/login" className="text-login">Войти</Link>
-                        <img alt="icon" src={require('../../media/login.png')} className="img-login"/>
+                        <Link to="/login">
+                            <img alt="icon" src={require('../../media/login.png')} className="img-login"/>
+                        </Link>
                     </button>
 
                     <div className="logo-and-hand">
@@ -35,7 +37,8 @@ class MainPage extends Component {
 
                     <button className="button-transfer-money">
                         <a href="#block4" className="text-transfer-money">Перевести</a>
-                        <img alt="icon" src={require("../../media/coins.png")} className="img-transfer-money"/>
+                        <a href="#block4"><img alt="icon" src={require("../../media/coins.png")}
+                                               className="img-transfer-money"/></a>
                     </button>
 
                 </div>
@@ -79,8 +82,10 @@ class MainPage extends Component {
                     <h1>Подключить сотрудников вашего заведения можно всего в пару кликов</h1>
                     <div className="line"/>
                     <button className="button-registration">
-                        <a href="" className="text-registration">Подключить</a>
-                        <img alt="icon" src={require("../../media/people.png")} className="img-registration"/>
+                        <Link to="/registration" className="text-registration">Подключить</Link>
+                        <Link to="/registration">
+                            <img alt="icon" src={require("../../media/people.png")} className="img-registration"/>
+                        </Link>
                     </button>
                     <div className="reg-steps-num">
                         <p className="step-num">1.</p>
