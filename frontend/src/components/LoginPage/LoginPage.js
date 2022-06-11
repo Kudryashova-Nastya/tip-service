@@ -23,10 +23,6 @@ class LoginPage extends Component {
                             </h1>
                         </div>
                         <form className="mt-8 space-y-6 w-1/3" action="#" method="POST">
-                            {/*{% csrf_token %}*/}
-                            {/*{% if form.non_field_errors %}*/}
-                            {/*<div className="alert alert-dismissible alert-danger">{{form.non_field_errors}}</div>*/}
-                            {/*{% endif %}*/}
                             <input type="hidden" name="remember" value="true"/>
                             <div className="rounded-md shadow-sm -space-y-px">
                                 <div>
@@ -58,7 +54,6 @@ class LoginPage extends Component {
                                     </a>
                                 </div>
                             </div>
-                            {/*<div className="mb-3">{{f.errors}}</div>*/}
                             <div>
                                 <button type="submit"
                                         className="button-loginPage group relative w-full flex justify-center py-2 px-4 border text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2">
