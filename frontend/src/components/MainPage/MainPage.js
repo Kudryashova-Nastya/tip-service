@@ -3,9 +3,19 @@ import './main.css'
 import './fullpage.css'
 import {Link} from "react-router-dom";
 
-
+import StarRating from "./StarRating/StarRange";
 class MainPage extends Component {
+    state = {
+        starsSelected: 1,
+      }
+
+    change=(starsSelected) =>
+           this.setState({starsSelected});
+
+
     render() {
+        const starsSelected = this.state.starsSelected
+
         return (
             <div id="fullpage">
                 <div className="section">
@@ -112,8 +122,9 @@ class MainPage extends Component {
                             <label htmlFor="review">Отзыв на сотрудника:</label>
                             <input id="review" name="review" placeholder="комментарий..." required/>
                             <label htmlFor="rating">Оценка:</label>
-                            <input id="rating" name="rating" type="number" min="1" max="5" step="1"
-                                   placeholder="оценка от 1 до 5..." required/>
+                            <div className="App">
+                                <StarRating starsSelected={starsSelected} totalStars={5} onRate={this.change} />
+                            </div>
                         </div>
                         <div className="form-col">
                             <label htmlFor="staff">Введите ID сотрудника, указанный на чеке рядом с
