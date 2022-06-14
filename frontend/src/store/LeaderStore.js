@@ -1,7 +1,8 @@
 import { makeAutoObservable, runInAction } from "mobx";
-import { getHostInformation, CORS } from "./helper";
+import Auth from "./Auth";
+import helper from "./helper";
 
-const host = getHostInformation();
+const host = helper.host;
 
 class LeaderStore {
 
@@ -12,6 +13,7 @@ class LeaderStore {
   ledInfo = null;
 
   fetchInfo = async (id) => {
+    const CORS = Auth.getCORS()
     const ledReq = await fetch(`${host}/leader/${id}`, CORS);
     const ledRes = await ledReq.json();
     if (ledReq.ok && ledRes !== null) {
