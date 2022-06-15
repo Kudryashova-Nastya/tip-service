@@ -6,39 +6,39 @@ class RegistrationPage extends Component {
     render() {
         return (
             <>
-                <div class="min-h-full flex justify-center py-12 px-4 sm:px-6 lg:px-8">
-                    <div class="w-full space-y-8">
+                <div className="min-h-full flex justify-center py-12 px-4 sm:px-6 lg:px-8">
+                    <div className="w-full space-y-8">
                         <div>
                             <img className="mx-auto h-20 w-auto" src={require('../../media/logo-main.png')} alt="Workflow"/>
-                            <h1 class="mt-6 text-center text-3xl font-extrabold">
+                            <h1 className="mt-6 text-center text-3xl font-extrabold">
                             Регистрация руководителя
                             </h1>
                         </div>
-                        <form class="mt-8 space-y-6 w-1/3" action="#" method="POST">
-                            <div class="rounded-md shadow-sm -space-y-px reg">
+                        <form className="mt-8 space-y-6 w-1/3" action="#" method="POST">
+                            <div className="rounded-md shadow-sm -space-y-px reg">
                                 <div>
-                                    <label for="username" class="sr-only">Логин</label>
-                                    <input id="login" name="username" type="login" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm" placeholder="Логин"/>
+                                    <label for="username" className="sr-only">Логин</label>
+                                    <input id="login" name="username" type="login" required className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm" placeholder="Логин"/>
                                 </div>
                                 <div>
-                                    <label for="phone" class="sr-only">Телефон</label>
-                                    <input id="phone" name="phone" type="tel" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm" placeholder="Телефон"/>
+                                    <label for="phone" className="sr-only">Телефон</label>
+                                    <input id="phone" name="phone" type="tel" required className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm" placeholder="Телефон"/>
                                 </div>
                                 <div>
-                                    <label for="first_name" class="sr-only">Имя и отчество</label>
-                                    <input id="first_name" name="first_name" type="text"required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm" placeholder="Имя и отчество"/>
+                                    <label for="first_name" className="sr-only">Имя и отчество</label>
+                                    <input id="first_name" name="first_name" type="text"required className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm" placeholder="Имя и отчество"/>
                                 </div>
                                 <div>
-                                    <label for="last_name" class="sr-only">Фамилия</label>
-                                    <input id="last_name" name="last_name" type="text"required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm" placeholder="Фамилия"/>
+                                    <label for="last_name" className="sr-only">Фамилия</label>
+                                    <input id="last_name" name="last_name" type="text"required className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm" placeholder="Фамилия"/>
                                 </div>
                                 <div>
-                                    <label for="password" class="sr-only">Пароль</label>
-                                    <input id="password" name="password" type="password" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none  focus:z-10 sm:text-sm" placeholder="Пароль"/>
+                                    <label for="password" className="sr-only">Пароль</label>
+                                    <input id="password" name="password" type="password" required className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none  focus:z-10 sm:text-sm" placeholder="Пароль"/>
                                 </div>
                                 <div>
-                                    <label for="confirm_password" class="sr-only">Подтверждение пароля</label>
-                                    <input id="confirm_password" name="confirm_password" type="password" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm" placeholder="Пароль ещё раз"/>
+                                    <label for="confirm_password" className="sr-only">Подтверждение пароля</label>
+                                    <input id="confirm_password" name="confirm_password" type="password" required className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm" placeholder="Пароль ещё раз"/>
                                 </div>
                             </div>
                             <div>
