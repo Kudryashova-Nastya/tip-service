@@ -124,21 +124,26 @@ class MainPage extends Component {
                     <h1 className="last">Перевод чаевых сотруднику</h1>
                     <img alt="icon" src={require("../../media/qr-code.png")} className="img-qr"/>
                     <form method="POST" action="">
-                        <div className="form-col">
-                            <label htmlFor="staff">Введите ID сотрудника, указанный на чеке рядом с
-                                QR-кодом:</label>
-                            <input id="staff" name="staff" type="number" placeholder="ID сотрудника..." min="1"
-                                   required/>
-                            <label htmlFor="sum_tea">Введите сумму чаевых:</label>
-                            <input id="sum_tea" name="sum_tea" type="number" placeholder="cумма..." required
-                                   min="1"/>
-                        </div>
-                        <div className="form-col">
-                            <label htmlFor="review">Отзыв на сотрудника:</label>
-                            <input id="review" name="review" placeholder="комментарий..." required/>
-                            <label htmlFor="rating">Оценка:</label>
-                            <div className="App">
-                                <StarRating starsSelected={starsSelected} totalStars={5} onRate={this.change} />
+
+                        <div className="form-main">
+                            <div className="form-col">
+                                <label htmlFor="staff">Введите ID сотрудника, указанный на чеке рядом с
+                                    QR-кодом:</label>
+                                <input id="staff" name="staff" type="number" placeholder="ID сотрудника..." min="1"
+                                       required/>
+                                <label htmlFor="sum_tea">Введите сумму чаевых:</label>
+                                <input id="sum_tea" name="sum_tea" type="number" placeholder="cумма..." required
+                                       min="1"/>
+                            </div>
+                            <div className="form-col">
+                                <label htmlFor="review">Отзыв на сотрудника:</label>
+                                <input id="review" name="review" placeholder="комментарий..." required/>
+                                <label htmlFor="rating">Оценка:</label>
+                                <div className="star-rating">
+                                    <div className="App">
+                                        <StarRating starsSelected={starsSelected} totalStars={5} onRate={this.change} />
+                                    </div>
+                                </div>
                             </div>
                         </div>
 

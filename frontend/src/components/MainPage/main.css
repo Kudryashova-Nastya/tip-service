@@ -138,8 +138,8 @@
     height: 6em;
     width: 16em;
     position: absolute;
-    bottom: 1em;
-    left: 7em;
+    bottom: 3vh;
+    left: 5vh;
 }
 
 .img-transfer-money
@@ -230,8 +230,8 @@ figure
     height: 6em;
     width: 18em;
     position: absolute;
-    bottom: 1em;
-    left: 4em;
+    bottom: 3vh;
+    left: 5vh;
 }
 
 .text-registration
@@ -372,8 +372,17 @@ label
 
 form
 {
+    margin-top: 5vh;
+    width: 52vw;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+    text-align: left;
+}
+
+.form-main
+{
     display: flex;
-    margin-top: 8vh;
     width: 52vw;
     margin-right: auto;
     margin-left: auto;
@@ -396,7 +405,7 @@ input::placeholder
 .button-form
 {
     font-family: 'Amatic SC', cursive;
-    font-size: 2em;
+    font-size: 3em;
     background-color: #DFDCCF;
     border: none;
     border-radius: 0.5em;
@@ -404,13 +413,26 @@ input::placeholder
     width: 5em;
     left: calc(50vw - 2.5em);
     position: absolute;
-    margin-top: 40vh;
+    margin-top: 5vh;
 }
 
 .form-col
 {
     align-self: flex-end;
     margin-right: 5vh;
+}
+
+.form-col:nth-child(2)
+{
+    padding-bottom: 20px;
+}
+
+.star-rating
+{
+    display: block;
+    height: 7vh;
+    width: fit-content;
+    padding-top: 5px;
 }
 
 @media (min-width: 1000px) {
@@ -575,13 +597,25 @@ input::placeholder
 
     form
     {
+        margin-top: 0;
+        width: auto;
+    }
+
+    .star-rating
+    {
+        height: auto;
+        padding-top: 0;
+        position: relative;
+        left: 5vw;
+    }
+
+    .form-main
+    {
         flex-wrap: wrap;
-        margin-top: 0vh;
         width: 70vw;
-        margin-right: auto;
-        margin-left: auto;
         align-items: center;
         text-align: center;
+        margin: 2em auto 1.5em;
     }
 
     input
@@ -610,12 +644,12 @@ input::placeholder
     {
         height: 12vh;
         margin-top: 1em;
-        margin-bottom: 2em;
+        margin-bottom: 0;
     }
 
     .button-form
     {
-        margin-top: 70vh;
+        margin-top: 0;
     }
 }
 
