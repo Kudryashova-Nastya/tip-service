@@ -17,7 +17,8 @@ const App = observer(() => {
                 <Route path="/" element={<MainPage/>}/>
                 <Route path="/login" element={<LoginPage/>}/>
                 <Route path="/registration" element={<RegistrationPage/>}/>
-                    <Route path="/" element={loggedLed ? <ComponentWithHeader/> : <Navigate to="/login" replace />} >
+                    {/*<Route path="/" element={loggedLed ? <ComponentWithHeader/> : <Navigate to="/login" replace />} >*/}
+                    <Route path="/" element={<ComponentWithHeader/> } >
                         <Route path="leader/" element={<LeaderPage/>}/>
                         {/*<Route path="leader/add-branch" element={<AddBranch />} />*/}
                         {/*<Route path="leader/edit-branch" element={<EditBranch />} />*/}

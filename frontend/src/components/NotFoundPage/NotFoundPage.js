@@ -8,10 +8,11 @@ class NotFoundPage extends Component {
     render() {
         return (
             <>
-                <NotFoundHeader />
+                <NotFoundHeader/>
                 <div className='notfound-main flex flex-row-reverse justify-center mt-36'>
                     <div className='notfound-main__illustration'>
-                        <img className='notfound-main__illustration__image lg:w-80 md:w-72 sm:w-44' src={require('../../media/teacup.png')} alt='TeaCup'/>
+                        <img className='notfound-main__illustration__image lg:w-80 md:w-72 sm:w-44'
+                             src={require('../../media/teacup.png')} alt='TeaCup'/>
                     </div>
                     <div className='notfound-main__text-block flex flex-col justify-center lg:mr-36 md:mr-28 sm:mr-24'>
                         <h2 className='lg:text-9xl md:text-8xl sm:text-5xl text-center font-bold'>
