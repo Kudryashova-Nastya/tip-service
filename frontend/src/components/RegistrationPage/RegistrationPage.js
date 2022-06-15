@@ -6,6 +6,14 @@ class RegistrationPage extends Component {
     render() {
         return (
             <>
+                <div className='w-full grid grid-cols-1 md:grid-cols-12 mt-5' style={{marginBottom: '-70px'}}>
+                    <div className="w-full grid grid-cols-1 col-start-2 col-span-1">
+                        <button type="submit"
+                                className="button-loginPage group relative flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2">
+                            <Link to="/">Назад</Link>
+                        </button>
+                    </div>
+                </div>
                 <div className="min-h-full flex justify-center py-12 px-4 sm:px-6 lg:px-8">
                     <div className="w-full space-y-8">
                         <div>
@@ -17,28 +25,28 @@ class RegistrationPage extends Component {
                         <form className="mt-8 space-y-6 w-1/3" action="#" method="POST">
                             <div className="rounded-md shadow-sm -space-y-px reg">
                                 <div>
-                                    <label for="username" className="sr-only">Логин</label>
-                                    <input id="login" name="username" type="login" required className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm" placeholder="Логин"/>
+                                    <label htmlFor="username" className="sr-only">Логин</label>
+                                    <input id="login" name="username" type="login" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm" placeholder="Логин"/>
                                 </div>
                                 <div>
-                                    <label for="phone" className="sr-only">Телефон</label>
-                                    <input id="phone" name="phone" type="tel" required className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm" placeholder="Телефон"/>
+                                    <label htmlFor="phone" className="sr-only">Телефон</label>
+                                    <input id="phone" name="phone" type="tel" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm" placeholder="Телефон"/>
                                 </div>
                                 <div>
-                                    <label for="first_name" className="sr-only">Имя и отчество</label>
-                                    <input id="first_name" name="first_name" type="text"required className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm" placeholder="Имя и отчество"/>
+                                    <label htmlFor="first_name" className="sr-only">Имя и отчество</label>
+                                    <input id="first_name" name="first_name" type="text" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm" placeholder="Имя и отчество"/>
                                 </div>
                                 <div>
-                                    <label for="last_name" className="sr-only">Фамилия</label>
-                                    <input id="last_name" name="last_name" type="text"required className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm" placeholder="Фамилия"/>
+                                    <label htmlFor="last_name" className="sr-only">Фамилия</label>
+                                    <input id="last_name" name="last_name" type="text" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm" placeholder="Фамилия"/>
                                 </div>
                                 <div>
-                                    <label for="password" className="sr-only">Пароль</label>
-                                    <input id="password" name="password" type="password" required className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none  focus:z-10 sm:text-sm" placeholder="Пароль"/>
+                                    <label htmlFor="password" className="sr-only">Пароль</label>
+                                    <input id="password" name="password" type="password" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none  focus:z-10 sm:text-sm" placeholder="Пароль"/>
                                 </div>
                                 <div>
-                                    <label for="confirm_password" className="sr-only">Подтверждение пароля</label>
-                                    <input id="confirm_password" name="confirm_password" type="password" required className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm" placeholder="Пароль ещё раз"/>
+                                    <label htmlFor="confirm_password" className="sr-only">Подтверждение пароля</label>
+                                    <input id="confirm_password" name="confirm_password" type="password" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm" placeholder="Пароль ещё раз"/>
                                 </div>
                             </div>
                             <div>
