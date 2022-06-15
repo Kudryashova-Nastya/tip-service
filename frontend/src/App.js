@@ -7,6 +7,7 @@ import ComponentWithHeader from "./components/ComponentWithHeader";
 import LeaderPage from "./components/LeaderPage/LeaderPage";
 import {observer} from "mobx-react";
 import helper from "./store/helper";
+import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
 
 const App = observer(() => {
     const loggedLed = helper.isLoggedIn()
@@ -24,7 +25,7 @@ const App = observer(() => {
                         {/*<Route path="leader/edit-staff" element={<EditStaff />} />*/}
                         {/*<Route path="leader/edit" element={<EditLeader />} />*/}
                     </Route>
-                {/*<Route path="*" element={<NotFoundPage />} />*/}
+                <Route path="*" element={<NotFoundPage />} />
             </Routes>
         </>
     );
