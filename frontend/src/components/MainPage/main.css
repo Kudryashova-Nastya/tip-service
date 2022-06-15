@@ -372,11 +372,12 @@ label
 
 form
 {
+    display: flex;
     margin-top: 8vh;
     width: 52vw;
     margin-right: auto;
     margin-left: auto;
-    align-items: center;
+    align-items: baseline;
     text-align: left;
 }
 
@@ -394,7 +395,6 @@ input::placeholder
 
 .button-form
 {
-    display: block;
     font-family: 'Amatic SC', cursive;
     font-size: 2em;
     background-color: #DFDCCF;
@@ -404,7 +404,13 @@ input::placeholder
     width: 5em;
     left: calc(50vw - 2.5em);
     position: absolute;
-    /*bottom: 4vh;*/
+    margin-top: 40vh;
+}
+
+.form-col
+{
+    align-self: flex-end;
+    margin-right: 5vh;
 }
 
 @media (min-width: 1000px) {
@@ -461,12 +467,12 @@ input::placeholder
     }
     .text-tips-service
     {
-        font-size: 2vh;
+        font-size: 2.5vh;
     }
     .tips-service-group
     {
         bottom: 30vh;
-        right: 20vw;
+        right: 15vw;
     }
     .button-transfer-money
     {
@@ -506,12 +512,12 @@ input::placeholder
         background-color: #625C60;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 35vh;
+        margin-top: 32vh;
     }
 
     .reg-steps
     {
-        top: 18vh;
+        top: 16vh;
         left: 22vw;
     }
 
@@ -530,6 +536,7 @@ input::placeholder
 
     .step-num
     {
+        font-size: 2em;
         margin-bottom: 2vh;
     }
 
@@ -543,31 +550,33 @@ input::placeholder
     .done-block
     {
         left: 11vw;
-        top: 56vh;
+        top: 54vh;
     }
 
     .done
     {
         font-size: 2.5vh;
         left: 11vw;
-        top: 51vh;
+        top: 48vh;
     }
 
     .tips-hand-img
     {
         height: 8vh;
-        bottom: 24vh;
+        bottom: 30vh;
     }
 
     .tips-jar-img
     {
         height: 8vh;
-        bottom: 18vh;
-        right: 15vw;
+        bottom: 22vh;
+        right: 10vw;
     }
 
     form
     {
+        flex-wrap: wrap;
+        margin-top: 0vh;
         width: 70vw;
         margin-right: auto;
         margin-left: auto;
@@ -577,6 +586,7 @@ input::placeholder
 
     input
     {
+        font-size: 2vh;
         background-color: #C1D1AA;
         border: none;
         border-radius: 1.5em;
@@ -588,6 +598,7 @@ input::placeholder
 
     label
     {
+        font-size: 2vh;
         display:block;
         color: #625C60;
         font-family: 'Montserrat', sans-serif;
@@ -599,7 +610,12 @@ input::placeholder
     {
         height: 12vh;
         margin-top: 1em;
-        margin-bottom: 3em;
+        margin-bottom: 2em;
+    }
+
+    .button-form
+    {
+        margin-top: 70vh;
     }
 }
 
