@@ -23,7 +23,7 @@ class Auth {
 
     getPOSTCORS = () => {
         Helper.getToken().then()
-        return Helper.POSTCORS
+        return Helper.POSTCORS()
     };
 
 

@@ -12,7 +12,7 @@ class Helper {
     //   "refresh": "...",
     //   "access": "..."
     // }
-    _token = JSON.parse(localStorage.getItem('REACT_TOKEN_AUTH') || '') || null;
+    _token = JSON.parse(localStorage.getItem('REACT_TOKEN_AUTH')) || null;
 
     host = "127.0.0.1:8000/api/v1"
 
@@ -36,7 +36,7 @@ class Helper {
 
     // узнать дату окончания жизни токена
     getExpirationDate = (jwtToken = null) => {
-        if (!jwtToken) {
+        if (jwtToken === null) {
             return null;
         }
 
