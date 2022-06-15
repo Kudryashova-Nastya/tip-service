@@ -2,9 +2,11 @@ import React, {Component} from "react";
 import './main.css'
 import './fullpage.css'
 import {Link} from "react-router-dom";
+import AnchorLink from "react-anchor-link-smooth-scroll/lib/anchor-link";
 
 
 class MainPage extends Component {
+
     render() {
         return (
             <div id="fullpage">
@@ -22,8 +24,8 @@ class MainPage extends Component {
                     <div className="name-and-leaf">
                         <img alt="icon" src={require("../../media/green-tea.png")} className="img-green-tea"/>
                         <div className="text-logo">
-                            <span className="text-logo-el">Дай</span>
-                            <span className="text-logo-el">на</span>
+                            <span className="text-logo-el">Дай </span>
+                            <span className="text-logo-el">на </span>
                             <span className="text-logo-el">Чай</span>
                         </div>
                     </div>
@@ -33,10 +35,12 @@ class MainPage extends Component {
                         <img alt="icon" src={require("../../media/tips-service.png")} className="img-tips-service"/>
                     </div>
 
-                    <button className="button-transfer-money">
-                        <a href="#block4" className="text-transfer-money">Перевести</a>
-                        <img alt="icon" src={require("../../media/coins.png")} className="img-transfer-money"/>
-                    </button>
+                    <AnchorLink href='#transfer-money'>
+                        <button className="button-transfer-money">
+                            <a className="text-transfer-money">Перевести</a>
+                            <img alt="icon" src={require("../../media/coins.png")} className="img-transfer-money"/>
+                        </button>
+                    </AnchorLink>
 
                 </div>
 
@@ -103,18 +107,11 @@ class MainPage extends Component {
                     <img alt="icon" src={require("../../media/tips-jar.png")} className="tips-jar-img"/>
                 </div>
 
-                <div className="section">
+                <div className="section" id="transfer-money">
                     <h1 className="last">Перевод чаевых сотруднику</h1>
                     <img alt="icon" src={require("../../media/qr-code.png")} className="img-qr"/>
                     <form method="POST" action="">
 
-                        <div className="form-col">
-                            <label htmlFor="review">Отзыв на сотрудника:</label>
-                            <input id="review" name="review" placeholder="комментарий..." required/>
-                            <label htmlFor="rating">Оценка:</label>
-                            <input id="rating" name="rating" type="number" min="1" max="5" step="1"
-                                   placeholder="оценка от 1 до 5..." required/>
-                        </div>
                         <div className="form-col">
                             <label htmlFor="staff">Введите ID сотрудника, указанный на чеке рядом с
                                 QR-кодом:</label>
@@ -124,10 +121,17 @@ class MainPage extends Component {
                             <input id="sum_tea" name="sum_tea" type="number" placeholder="cумма..." required
                                    min="1"/>
                         </div>
+                        <div className="form-col">
+                            <label htmlFor="review">Отзыв на сотрудника:</label>
+                            <input id="review" name="review" placeholder="комментарий..." required/>
+                            <label htmlFor="rating">Оценка:</label>
+                            <input id="rating" name="rating" type="number" min="1" max="5" step="1"
+                                   placeholder="оценка от 1 до 5..." required/>
+                        </div>
 
                         <button type="submit" className="button-form">
-                            <span className="text-logo-el">Дать</span>
-                            <span className="text-logo-el">на</span>
+                            <span className="text-logo-el">Дать </span>
+                            <span className="text-logo-el">на </span>
                             <span className="text-logo-el">Чай</span>
                         </button>
                     </form>
