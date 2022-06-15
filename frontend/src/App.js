@@ -8,6 +8,7 @@ import LeaderPage from "./components/LeaderPage/LeaderPage";
 import {observer} from "mobx-react";
 import helper from "./store/helper";
 import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
+import AccountEmployees from "./components/AccountEmployees/AccountEmployees";
 
 const App = observer(() => {
     const loggedLed = helper.isLoggedIn()
@@ -25,6 +26,7 @@ const App = observer(() => {
                         {/*<Route path="leader/add-staff" element={<AddStaff />} />*/}
                         {/*<Route path="leader/edit-staff" element={<EditStaff />} />*/}
                         {/*<Route path="leader/edit" element={<EditLeader />} />*/}
+                        <Route path="employee/" element={<AccountEmployees />} />
                     </Route>
                 <Route path="*" element={<NotFoundPage />} />
             </Routes>
