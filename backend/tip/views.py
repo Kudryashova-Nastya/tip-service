@@ -4,7 +4,7 @@ from rest_framework.permissions import IsAuthenticated
 from .serializers import *
 
 
-class OrganizationReadOnly(viewsets.ReadOnlyModelViewSet):  # list, retrieve
+class OrganizationViewSet(viewsets.ModelViewSet):  # crud, patch, head
     serializer_class = OrganizationSerializer
     queryset = Organization.objects.all()
     permission_classes = (IsAuthenticated,)
