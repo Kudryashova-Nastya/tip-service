@@ -9,7 +9,7 @@ class History extends Component{
         return (
             <div>
             <div className='w-full grid grid-cols-1 md:grid-cols-12 items-center h-20'>
-                <div className="data col-start-2 col-span-2 md:grid-cols-1 ml-14">
+                <div className="data col-start-4 col-span-2 md:grid-cols-1">
                     <span className="data">История</span>
                 </div>
             </div>
