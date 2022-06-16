@@ -1,9 +1,11 @@
-import React from "react";
-import {Link} from "react-router-dom";
+import React, {useState} from "react";
+import {Link, useNavigate} from "react-router-dom";
 import '../style.css'
 import {useForm} from "react-hook-form";
+import Auth from "../../store/Auth";
+import {observer} from "mobx-react";
 
-function LoginPage() {
+const LoginPage = observer(() => {
     const {
         register,
         formState: {errors, isValid},
@@ -12,8 +14,18 @@ function LoginPage() {
         mode: "onChange"
     })
 
+    const [authErrors, setAuthErrors] = useState(null)
+
+    const history = useNavigate()
+
     const onSubmit = (data) => {
-        alert(JSON.stringify(data))
+
+        const auth = Auth.login(data)
+        if (auth) {
+            setAuthErrors(JSON.stringify(auth))
+        } else {
+            history("/leader")
+        }
     }
 
     return (
@@ -35,6 +47,7 @@ function LoginPage() {
                             Авторизация
                         </h1>
                     </div>
+                    {authErrors ? <div>Ошибка {authErrors}</div> : null}
                     <form className="mt-8 space-y-6 w-1/3" onSubmit={handleSubmit(onSubmit)}>
                         {/*<input type="hidden" name="remember" value="true"/>*/}
                         <div className="rounded-md shadow-sm -space-y-px">
@@ -92,6 +105,6 @@ function LoginPage() {
             </div>
         </>
     )
-}
+})
 
 export default LoginPage;

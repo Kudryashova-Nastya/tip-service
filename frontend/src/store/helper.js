@@ -62,20 +62,26 @@ class Helper {
             return null;
         }
 
-        const updatedToken = await fetch(`${this.host}/token/`, {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: {
-                "username": data.username,
-                "password": data.password
-            }
-        }).then(r => r.json());
-
-        this.setToken(updatedToken);
-        this.isLoggedIn()
-    };
+        const req = await fetch(`${this.host}/token/`, {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: {
+                    "username": data.username,
+                    "password": data.password
+                }
+            });
+        const res = await req.json();
+        if (req.ok && res !== null) {
+            this.setToken(res);
+            this.isLoggedIn()
+            return false
+        } else {
+            runInAction(() => this.isLogged = false)
+            return res
+        }
+    }
 
     getTokenFromRefresh = async () => {
         if (!this._token) {
