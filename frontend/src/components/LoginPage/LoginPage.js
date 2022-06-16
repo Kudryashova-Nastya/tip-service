@@ -44,7 +44,7 @@ function LoginPage() {
                                        {...register("username", {required: "Обязательное поле"})}
                                        className="appearance-none w-full relative block px-3 py-2 border placeholder-gray-500 rounded-md focus:outline-none focus:z-10 sm:text-sm"
                                        placeholder="Логин"/>
-                                {errors?.username && <p>{errors?.username?.message}</p>}
+                                {errors?.username && <p className='form-error-text mb-3 -mt-4 p-2 rounded-md border border-red-400'>{errors?.username?.message}</p>}
                             </div>
                             <div>
                                 <label htmlFor="password" className="sr-only">Пароль</label>
@@ -53,7 +53,7 @@ function LoginPage() {
                                        {...register("password", {required: "Обязательное поле"})}
                                        className="appearance-non w-full relative block px-3 py-2 border placeholder-gray-500 rounded-md focus:outline-none focus:z-10 sm:text-sm"
                                        placeholder="Пароль"/>
-                                {errors?.password && <p>{errors?.password?.message}</p>}
+                                {errors?.password && <p className='form-error-text mb-3 -mt-4 p-2 rounded-md border border-red-400'>{errors?.password?.message}</p>}
                             </div>
 
 
@@ -74,7 +74,7 @@ function LoginPage() {
                         </div>
                         <div>
                             <button type="submit" disabled={!isValid}
-                                    className="button-loginPage group relative w-full flex justify-center py-2 px-4 border text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2">
+                                    className="button-loginPage group relative w-full flex justify-center py-2 px-4 border text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50">
                                     <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                                       <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                                            fill="currentColor"
