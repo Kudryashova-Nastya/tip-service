@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import '../style.css'
 import {useForm} from "react-hook-form";
@@ -15,14 +15,17 @@ const LoginPage = observer(() => {
     })
 
     const [authErrors, setAuthErrors] = useState(null)
+    // const [auth, setAuth] = useState(false)
 
     const history = useNavigate()
 
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
 
-        const auth = Auth.login(data)
-        if (auth) {
-            setAuthErrors(JSON.stringify(auth))
+        // useEffect(() => { setAuth(Auth.login(data)) }, [])
+        // const auth = Auth.login(data)
+        // console.log(auth)
+        if (await Auth.login(data)) {
+            setAuthErrors(await Auth.login(data))
         } else {
             history("/leader")
         }

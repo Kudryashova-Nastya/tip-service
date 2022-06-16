@@ -9,7 +9,7 @@ class Auth {
     }
 
     login = (data) => {
-        return Helper.getToken(data).then()
+        return Helper.getToken(data)
     };
 
     logout = () => {

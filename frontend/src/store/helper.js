@@ -17,7 +17,7 @@ class Helper {
     isLogged = false
 
     // host = "http://tip.std-1305.ist.mospolytech.ru/api/v1"
-    host = "http://127.0.0.1:8000//api/v1"
+    host = "http://127.0.0.1:8000/api/v1"
 
 
     POSTCORS = (data) => {
@@ -63,24 +63,29 @@ class Helper {
             return null;
         }
 
-        const req = await fetch(`${this.host}/token/`, {
-                method: 'POST',
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: {
-                    "username": data.username,
-                    "password": data.password
-                }
-            });
+        const tokenCORS = {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data),
+        }
+
+        const req = await fetch(`${this.host}/token/`, tokenCORS);
         const res = await req.json();
-        if (req.ok && res !== null) {
+        console.log(JSON.stringify(res.detail))
+        console.log(res.detail)
+        console.log(data)
+        console.log(req.ok)
+        if (req.ok && res?.detail == null) {
             this.setToken(res);
             this.isLoggedIn()
+            console.log('aaaaa')
             return false
         } else {
+            console.log('bbbbbbbbbb')
             runInAction(() => this.isLogged = false)
-            return res
+            return JSON.stringify(res.detail)
         }
     }
 
@@ -93,7 +98,7 @@ class Helper {
             const updatedToken = await fetch(`${this.host}/token/refresh/`, {
                 method: 'POST',
                 body: {
-                    "refresh": this._token.refresh
+                    "refresh": JSON.stringify(this._token.refresh)
                 }
             }).then(r => r.json());
 
