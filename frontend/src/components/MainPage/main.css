@@ -135,8 +135,8 @@
     background-color: #C1D1AA;
     border: none;
     border-radius: 1.5em;
-    height: 6em;
-    width: 16em;
+    height: 110px;
+    width: 276px;
     position: absolute;
     bottom: 3vh;
     left: 5vh;
@@ -144,7 +144,7 @@
 
 .img-transfer-money
 {
-    height: 3em;
+    height: 50px;;
     float: right;
     position: relative;
     left: -1.5em;
@@ -154,7 +154,7 @@
 .text-transfer-money
 {
     font-family: 'Amatic SC', cursive;
-    font-size: 3em;
+    font-size: 50px;
     color: #625C60;
 }
 
@@ -227,8 +227,8 @@ figure
     background-color: #C1D1AA;
     border: none;
     border-radius: 1.5em;
-    height: 6em;
-    width: 18em;
+    height: 100px;
+    width: 276px;
     position: absolute;
     bottom: 3vh;
     left: 5vh;
@@ -237,7 +237,7 @@ figure
 .text-registration
 {
     font-family: 'Amatic SC', cursive;
-    font-size: 3em;
+    font-size: 50px;
     color: #625C60;
     position: relative;
     left: -0.1em;
@@ -245,7 +245,7 @@ figure
 
 .img-registration
 {
-    height: 3em;
+    height: 50px;
     float: right;
     position: relative;
     left: -0.9em;
@@ -405,13 +405,13 @@ input::placeholder
 .button-form
 {
     font-family: 'Amatic SC', cursive;
-    font-size: 3em;
+    font-size: 40px;
     background-color: #DFDCCF;
     border: none;
     border-radius: 0.5em;
-    height: 2em;
-    width: 5em;
-    left: calc(50vw - 2.5em);
+    height: 70px;
+    width: 190px;
+    left: calc(50vw - 95px);
     position: absolute;
     margin-top: 5vh;
 }
