@@ -266,3 +266,7 @@ main{
     bottom: 27px;
     font-size: 14px;
 }
+.form-error-text{
+    background-color: rgb(252 165 165);
+    color: rgb(127 29 29);
+}
