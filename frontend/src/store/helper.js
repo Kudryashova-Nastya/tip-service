@@ -1,4 +1,4 @@
-import {makeAutoObservable} from "mobx";
+import {makeAutoObservable, runInAction} from "mobx";
 
 
 class Helper {
@@ -14,7 +14,9 @@ class Helper {
     // }
     _token = JSON.parse(localStorage.getItem('REACT_TOKEN_AUTH')) || null;
 
-    host = "127.0.0.1:8000/api/v1"
+    isLogged = false
+
+    host = "http://tip.std-1305.ist.mospolytech.ru/api/v1"
 
 
     POSTCORS = (data) => {
@@ -23,14 +25,14 @@ class Helper {
             body: JSON.stringify(data),
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${this._token}`,
+                "Authorization": `Bearer ${this._token?.access}`,
             }
         })
     }
 
     CORS = {
         headers: {
-            "Authorization": `Bearer ${this._token}`,
+            "Authorization": `Bearer ${this._token?.access}`,
         },
     };
 
@@ -55,7 +57,27 @@ class Helper {
         return Date.now() > exp;
     };
 
-    getToken = async () => {
+    getToken = async (data) => {
+        if (!data) {
+            return null;
+        }
+
+        const updatedToken = await fetch(`${this.host}/token/`, {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: {
+                "username": data.username,
+                "password": data.password
+            }
+        }).then(r => r.json());
+
+        this.setToken(updatedToken);
+        this.isLoggedIn()
+    };
+
+    getTokenFromRefresh = async () => {
         if (!this._token) {
             return null;
         }
@@ -69,11 +91,14 @@ class Helper {
             }).then(r => r.json());
 
             this.setToken(updatedToken);
+            this.isLoggedIn()
+        } else {
+            runInAction(() => this.isLogged = false)
         }
     };
 
     isLoggedIn = () => {
-        return !!this._token;
+        runInAction(() => this.isLogged = !!this._token)
     };
 
     setToken = (token) => {
@@ -83,6 +108,7 @@ class Helper {
             localStorage.removeItem('REACT_TOKEN_AUTH');
         }
         this._token = token;
+        this.isLoggedIn()
     };
 
 }

@@ -11,15 +11,14 @@ import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
 import AccountEmployees from "./components/AccountEmployees/AccountEmployees";
 
 const App = observer(() => {
-    const loggedLed = helper.isLoggedIn()
     return (
         <>
             <Routes>
                 <Route path="/" element={<MainPage/>}/>
                 <Route path="/login" element={<LoginPage/>}/>
                 <Route path="/registration" element={<RegistrationPage/>}/>
-                    {/*<Route path="/" element={loggedLed ? <ComponentWithHeader/> : <Navigate to="/login" replace />} >*/}
-                    <Route path="/" element={<ComponentWithHeader/> } >
+                    <Route path="/" element={helper.isLogged ? <ComponentWithHeader/> : <Navigate to="/login" replace />} >
+                    {/*<Route path="/" element={<ComponentWithHeader/> } >*/}
                         <Route path="leader/" element={<LeaderPage/>}/>
                         {/*<Route path="leader/add-branch" element={<AddBranch />} />*/}
                         {/*<Route path="leader/edit-branch" element={<EditBranch />} />*/}

@@ -5,24 +5,24 @@ import Helper from "./helper";
 class Auth {
 
     constructor() {
-        makeAutoObservable(this);
+        makeAutoObservable(this)
     }
 
-    login = (newTokens) => {
-        Helper.setToken(newTokens);
+    login = (data) => {
+        Helper.getToken(data).then()
     };
 
     logout = () => {
-        Helper.setToken(null);
+        Helper.setToken(null)
     };
 
     getCORS = () => {
-        Helper.getToken().then()
+        Helper.getTokenFromRefresh().then()
         return Helper.CORS
     };
 
     getPOSTCORS = () => {
-        Helper.getToken().then()
+        Helper.getTokenFromRefresh().then()
         return Helper.POSTCORS()
     };
 
