@@ -20,8 +20,8 @@ const App = observer(() => {
                 <Route path="/" element={<MainPage/>}/>
                 <Route path="/login" element={<LoginPage/>}/>
                 <Route path="/registration" element={<RegistrationPage/>}/>
-                    <Route path="/" element={helper._token ? <ComponentWithHeader/> : <Navigate to="/login" replace />} >
-                    {/*<Route path="/" element={<ComponentWithHeader/> } >*/}
+                    {/*<Route path="/" element={helper._token ? <ComponentWithHeader/> : <Navigate to="/login" replace />} >*/}
+                    <Route path="/" element={<ComponentWithHeader/> } >
                         <Route path="leader/" element={<LeaderPage/>}/>
                         <Route path="leader/add-branch" element={<AddBranchPage />} />
                         <Route path="leader/edit-branch" element={<EditBranchPage />} />
