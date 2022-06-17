@@ -64,7 +64,7 @@ function MainPage() {
 
                 <AnchorLink href='#transfer-money'>
                     <button className="button-transfer-money">
-                        <a className="text-transfer-money">Перевести</a>
+                        <span className="text-transfer-money">Перевести</span>
                         <img alt="icon" src={require("../../media/coins.png")} className="img-transfer-money"/>
                     </button>
                 </AnchorLink>
