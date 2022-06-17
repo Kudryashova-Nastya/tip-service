@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import UserInfo from "./UserInfo/UserInfo";
 import Statistics from "./Statistics/Statistics";
 import History from "./History/History";
+import StaffStore from "../../store/StaffStore";
 
 
 class AccountEmployees extends Component {
@@ -11,7 +12,6 @@ class AccountEmployees extends Component {
             <div className="app">
                 <UserInfo/>
                 <Statistics/>
-                <History/>
             </div>
         )
     }

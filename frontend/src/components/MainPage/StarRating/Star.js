@@ -4,5 +4,4 @@ import React from 'react';
     <div className={ (selected) ? "star selected" : "star" } onClick={onClick}>
     </div>
 
-
 export default Star
