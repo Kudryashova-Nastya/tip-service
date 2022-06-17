@@ -3,6 +3,7 @@ from django.http import JsonResponse
 from django.utils.datetime_safe import datetime
 # from drf_multiple_model.views import ObjectMultipleModelAPIView
 from rest_framework import viewsets, status
+from rest_framework.decorators import action
 from rest_framework.parsers import JSONParser
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
@@ -16,15 +17,10 @@ from .serializers import *
 #     permission_classes = (IsAuthenticated,)
 
 
-class LeaderModelViewSet(viewsets.ModelViewSet):  # crud, patch, head
+class CreateLeaderModelViewSet(viewsets.ModelViewSet):  # crud, patch, head
 	serializer_class = LeaderSerializer
 	# queryset = Leader.objects.all()
-	permission_classes = (IsAuthenticated,)
-
-	def list(self, request, *args, **kwargs):
-		leader = Leader.objects.get(user=request.user.pk)
-		leader_serializer = LeaderSerializer(leader)
-		return Response(leader_serializer.data)
+	permission_classes = (AllowAny,)
 
 	def create(self, request, **kwargs):
 		leader_data = JSONParser().parse(request)
@@ -38,6 +34,16 @@ class LeaderModelViewSet(viewsets.ModelViewSet):  # crud, patch, head
 				leader_serializer.save()
 				return JsonResponse(leader_serializer.data, status=status.HTTP_201_CREATED)
 		return JsonResponse(leader_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class GetLeaderModelViewSet(viewsets.ModelViewSet):
+	serializer_class = LeaderSerializer
+	permission_classes = (IsAuthenticated, )
+
+	def list(self, request, *args, **kwargs):
+		leader = Leader.objects.get(user=request.user.pk)
+		leader_serializer = LeaderSerializer(leader)
+		return Response(leader_serializer.data)
 
 
 class BranchModelViewSet(viewsets.ModelViewSet):  # crud, patch, head
