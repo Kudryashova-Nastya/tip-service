@@ -14,8 +14,6 @@ class Helper {
     // }
     _token = JSON.parse(localStorage.getItem('REACT_TOKEN_AUTH')) || null;
 
-    isLogged = false
-
     // host = "http://tip.std-1305.ist.mospolytech.ru/api/v1"
     host = "http://127.0.0.1:8000/api/v1"
 
