@@ -275,3 +275,11 @@ textarea{
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
 }
+.main-form-error-text{
+    border-radius: 1.5em;
+    background-color: rgb(252 165 165);
+    color: rgb(127 29 29);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+}
