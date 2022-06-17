@@ -1,7 +1,13 @@
+from django.template.defaulttags import url
+from django.urls import path, include
 from rest_framework.routers import DefaultRouter
+
+from . import views
 from .views import *
 
 urlpatterns = [
+    # url(r'registration', LeaderRegistrationView.as_view()),
+    # path('registration/', LeaderRegistrationView.as_view(), name='registration')
 ]
 
 router = DefaultRouter()
@@ -13,4 +19,5 @@ router.register(r'payment', PaymentModelViewSet, basename='payment')
 router.register(r'payment_by_staff/(?P<staff>.+)', PaymentsByStaffViewSet, basename='payment_by_staff')
 # router.register(r'organization', OrganizationViewSet, basename='organization')
 router.register(r'branch', BranchModelViewSet, basename='branch')
+# router.register(r'registration', LeaderRegistrationView, basename='registration')
 urlpatterns += router.urls
