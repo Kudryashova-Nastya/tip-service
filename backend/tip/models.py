@@ -40,15 +40,15 @@ class Payment(models.Model):
         verbose_name_plural = "Чаевые"
 
 
-class Organization(models.Model):
-    legal_name = models.CharField(verbose_name="Юридическое имя", max_length=50, unique=True)
-
-    def __str__(self):
-        return self.legal_name
-
-    class Meta:
-        verbose_name = "Юридическое имя"
-        verbose_name_plural = "Юридические имена"
+# class Organization(models.Model):
+#     legal_name = models.CharField(verbose_name="Юридическое имя", max_length=50, unique=True)
+#
+#     def __str__(self):
+#         return self.legal_name
+#
+#     class Meta:
+#         verbose_name = "Юридическое имя"
+#         verbose_name_plural = "Юридические имена"
 
 
 class Leader(models.Model):
@@ -67,7 +67,7 @@ class Leader(models.Model):
 
 class Branch(models.Model):
     leader = models.ForeignKey(Leader, related_name="leader", on_delete=models.CASCADE)
-    organization = models.ForeignKey(Organization, related_name="organization", on_delete=models.CASCADE)
+    organization = models.CharField(verbose_name="Юридическое имя", max_length=100)
     branch_name = models.CharField(verbose_name="Название филиала", max_length=30)
     address = models.CharField(verbose_name="Адрес", max_length=100)
 

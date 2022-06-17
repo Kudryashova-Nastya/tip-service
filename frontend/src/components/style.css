@@ -31,9 +31,6 @@ body{
     border: 1px solid #BBB1A3;
 }
 
-header{
-    height: 40px;
-}
 
 .in{
     color: #787774;
@@ -72,7 +69,8 @@ nav .logo_text{
     background-color: #91B56B;
 }
 .data{
-    text-align: end;
+    /*text-align: end;*/
+    margin-left: 10px;
     font-size: 20px;
     font-family: 'Marmelad', sans-serif;
 }
@@ -116,7 +114,7 @@ main{
 .block_photo_staff{
     vertical-align: middle;
     text-align: right;
-    margin-right: 0;
+    margin-right: 22px;
 }
 
 .staff_name{
@@ -236,10 +234,17 @@ main{
     font-weight: 500;
     border-radius: 12px;
 }
+.branch_light{
+    background-color: #BBB1A3;
+    color:#E5DFDB;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 12px;
+}
 
 .staff-text
 {
-    margin-top: 15px;
+    margin-top: 25px;
     font-size: 20px;
     font-family: 'Marmelad', sans-serif;
 }
@@ -268,4 +273,21 @@ main{
     left: 40px;
     bottom: 27px;
     font-size: 14px;
+}
+.form-error-text{
+    background-color: rgb(252 165 165);
+    color: rgb(127 29 29);
+}
+textarea{
+    background: #C1D1AA;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+.main-form-error-text{
+    border-radius: 1.5em;
+    background-color: rgb(252 165 165);
+    color: rgb(127 29 29);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
 }

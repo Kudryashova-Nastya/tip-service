@@ -5,4 +5,4 @@ from . import models
 
 admin.site.register(models.Leader)
 admin.site.register(models.Staff)
-admin.site.register(models.Organization)
+# admin.site.register(models.Organization)

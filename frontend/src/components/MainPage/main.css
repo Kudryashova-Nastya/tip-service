@@ -135,16 +135,16 @@
     background-color: #C1D1AA;
     border: none;
     border-radius: 1.5em;
-    height: 6em;
-    width: 16em;
+    height: 110px;
+    width: 276px;
     position: absolute;
-    bottom: 1em;
-    left: 7em;
+    bottom: 3vh;
+    left: 5vh;
 }
 
 .img-transfer-money
 {
-    height: 3em;
+    height: 50px;;
     float: right;
     position: relative;
     left: -1.5em;
@@ -154,7 +154,7 @@
 .text-transfer-money
 {
     font-family: 'Amatic SC', cursive;
-    font-size: 3em;
+    font-size: 50px;
     color: #625C60;
 }
 
@@ -227,17 +227,17 @@ figure
     background-color: #C1D1AA;
     border: none;
     border-radius: 1.5em;
-    height: 6em;
-    width: 18em;
+    height: 100px;
+    width: 276px;
     position: absolute;
-    bottom: 1em;
-    left: 4em;
+    bottom: 3vh;
+    left: 5vh;
 }
 
 .text-registration
 {
     font-family: 'Amatic SC', cursive;
-    font-size: 3em;
+    font-size: 50px;
     color: #625C60;
     position: relative;
     left: -0.1em;
@@ -245,7 +245,7 @@ figure
 
 .img-registration
 {
-    height: 3em;
+    height: 50px;
     float: right;
     position: relative;
     left: -0.9em;
@@ -372,11 +372,21 @@ label
 
 form
 {
-    margin-top: 8vh;
+    margin-top: 5vh;
     width: 52vw;
     margin-right: auto;
     margin-left: auto;
     align-items: center;
+    text-align: left;
+}
+
+.form-main
+{
+    display: flex;
+    width: 52vw;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: baseline;
     text-align: left;
 }
 
@@ -394,17 +404,35 @@ input::placeholder
 
 .button-form
 {
-    display: block;
     font-family: 'Amatic SC', cursive;
-    font-size: 2em;
+    font-size: 40px;
     background-color: #DFDCCF;
     border: none;
     border-radius: 0.5em;
-    height: 2em;
-    width: 5em;
-    left: calc(50vw - 2.5em);
+    height: 70px;
+    width: 190px;
+    left: calc(50vw - 95px);
     position: absolute;
-    /*bottom: 4vh;*/
+    margin-top: 5vh;
+}
+
+.form-col
+{
+    align-self: flex-end;
+    margin-right: 5vh;
+}
+
+.form-col:nth-child(2)
+{
+    padding-bottom: 20px;
+}
+
+.star-rating
+{
+    display: block;
+    height: 7vh;
+    width: fit-content;
+    padding-top: 5px;
 }
 
 @media (min-width: 1000px) {
@@ -461,12 +489,12 @@ input::placeholder
     }
     .text-tips-service
     {
-        font-size: 2vh;
+        font-size: 2.5vh;
     }
     .tips-service-group
     {
         bottom: 30vh;
-        right: 20vw;
+        right: 15vw;
     }
     .button-transfer-money
     {
@@ -506,12 +534,12 @@ input::placeholder
         background-color: #625C60;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 35vh;
+        margin-top: 32vh;
     }
 
     .reg-steps
     {
-        top: 18vh;
+        top: 16vh;
         left: 22vw;
     }
 
@@ -530,6 +558,7 @@ input::placeholder
 
     .step-num
     {
+        font-size: 2em;
         margin-bottom: 2vh;
     }
 
@@ -543,40 +572,55 @@ input::placeholder
     .done-block
     {
         left: 11vw;
-        top: 56vh;
+        top: 54vh;
     }
 
     .done
     {
         font-size: 2.5vh;
         left: 11vw;
-        top: 51vh;
+        top: 48vh;
     }
 
     .tips-hand-img
     {
         height: 8vh;
-        bottom: 24vh;
+        bottom: 30vh;
     }
 
     .tips-jar-img
     {
         height: 8vh;
-        bottom: 18vh;
-        right: 15vw;
+        bottom: 22vh;
+        right: 10vw;
     }
 
     form
     {
+        margin-top: 0;
+        width: auto;
+    }
+
+    .star-rating
+    {
+        height: auto;
+        padding-top: 0;
+        position: relative;
+        left: 5vw;
+    }
+
+    .form-main
+    {
+        flex-wrap: wrap;
         width: 70vw;
-        margin-right: auto;
-        margin-left: auto;
         align-items: center;
         text-align: center;
+        margin: 2em auto 1.5em;
     }
 
     input
     {
+        font-size: 2vh;
         background-color: #C1D1AA;
         border: none;
         border-radius: 1.5em;
@@ -588,6 +632,7 @@ input::placeholder
 
     label
     {
+        font-size: 2vh;
         display:block;
         color: #625C60;
         font-family: 'Montserrat', sans-serif;
@@ -599,8 +644,40 @@ input::placeholder
     {
         height: 12vh;
         margin-top: 1em;
-        margin-bottom: 3em;
+        margin-bottom: 0;
+    }
+
+    .button-form
+    {
+        margin-top: 0;
     }
 }
 
 /*--------------------tablets--------------------*/
+
+.star {
+ cursor: pointer;
+ height: 30px;
+ width: 30px;
+ margin: 5px;
+ float: left;
+ background-color: grey;
+ clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82%  100%, 50% 75%, 18% 100%, 31% 59%, 0% 38%, 37% 38%);
+}
+
+.star.selected {
+ background-color: #76A34F;
+}
+
+#wrapper{
+ margin-left:auto;
+ margin-right:auto;
+ height:auto;
+ width:auto;
+}
+
+.raiting {
+width: 90px;
+ margin: 5px;
+float: none;
+}

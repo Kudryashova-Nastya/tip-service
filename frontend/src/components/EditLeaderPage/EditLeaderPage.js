@@ -5,7 +5,7 @@ import {useForm, Controller} from "react-hook-form";
 import InputMask from 'react-input-mask';
 
 
-function RegistrationPage() {
+function EditLeaderPage() {
     const {
         register,
         formState: {errors, isValid},
@@ -34,20 +34,30 @@ function RegistrationPage() {
                     <div>
                         <img className="mx-auto h-20 w-auto" src={require('../../media/logo-main.png')} alt="Workflow"/>
                         <h1 className="mt-6 text-center text-3xl font-extrabold">
-                        Регистрация руководителя
+                            Ваши данные
                         </h1>
                     </div>
-                    <form className="mt-8 space-y-6 w-1/3" action="#" method="POST" onSubmit={handleSubmit(onSubmit)}>
+                    <form className="mt-8 space-y-6 w-1/3" onSubmit={handleSubmit(onSubmit)}>
                         <div className="rounded-md shadow-sm -space-y-px reg">
                             <div>
-                                <label htmlFor="username" className="sr-only">Логин</label>
-                                <input id="login" name="username" type="login"
-                                       {...register("username", {
+                                <label htmlFor="first_name" className="sr-only">Имя и отчество</label>
+                                <input id="first_name" name="first_name" type="text"
+                                       {...register("first_name", {
                                            required: "Это поле обязательно к заполнению"
                                        })}
                                        className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm"
-                                       placeholder="Логин"/>
-                                {errors?.username && <p className='form-error-text mb-3 -mt-4 p-2 rounded-md border border-red-400'>{errors?.username?.message}</p>}
+                                       placeholder="Имя и отчество"/>
+                                {errors?.first_name && <p className='form-error-text mb-3 -mt-4 p-2 rounded-md border border-red-400'>{errors?.first_name?.message}</p>}
+                            </div>
+                            <div>
+                                <label htmlFor="last_name" className="sr-only">Фамилия</label>
+                                <input id="last_name" name="last_name" type="text"
+                                       {...register("last_name", {
+                                           required: "Это поле обязательно к заполнению"
+                                       })}
+                                       className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm"
+                                       placeholder="Фамилия"/>
+                                {errors?.last_name && <p className='form-error-text mb-3 -mt-4 p-2 rounded-md border border-red-400'>{errors?.last_name?.message}</p>}
                             </div>
                             <div>
                                 <label htmlFor="phone" className="sr-only">Телефон</label>
@@ -70,46 +80,7 @@ function RegistrationPage() {
                                 />
                                 {errors?.phone && <p className='form-error-text mb-3 -mt-4 p-2 rounded-md border border-red-400'>{errors?.phone?.message}</p>}
                             </div>
-                            <div>
-                                <label htmlFor="first_name" className="sr-only">Имя и отчество</label>
-                                <input id="first_name" name="first_name" type="text"
-                                       {...register("first_name", {
-                                           required: "Это поле обязательно к заполнению"
-                                       })}
-                                       className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm"
-                                       placeholder="Имя и отчество"/>
-                                {errors?.first_name && <p className='form-error-text mb-3 -mt-4 p-2 rounded-md border border-red-400'>{errors?.first_name?.message}</p>}
-                            </div>
-                            <div>
-                                <label htmlFor="last_name" className="sr-only">Фамилия</label>
-                                <input id="last_name" name="last_name" type="text"
-                                       {...register("last_name", {
-                                           required: "Это поле обязательно к заполнению"
-                                       })}
-                                       className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm"
-                                       placeholder="Фамилия"/>
-                                {errors?.last_name && <p className='form-error-text mb-3 -mt-4 p-2 rounded-md border border-red-400'>{errors?.last_name?.message}</p>}
-                            </div>
-                            <div>
-                                <label htmlFor="password" className="sr-only">Пароль</label>
-                                <input id="password" name="password" type="password"
-                                       {...register("password", {
-                                           required: "Это поле обязательно к заполнению"
-                                       })}
-                                       className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none  focus:z-10 sm:text-sm"
-                                       placeholder="Пароль"/>
-                                {errors?.password && <p className='form-error-text mb-3 -mt-4 p-2 rounded-md border border-red-400'>{errors?.password?.message}</p>}
-                            </div>
-                            <div>
-                                <label htmlFor="confirm_password" className="sr-only">Подтверждение пароля</label>
-                                <input id="confirm_password" name="confirm_password" type="password"
-                                       {...register("confirm_password", {
-                                           required: "Это поле обязательно к заполнению"
-                                       })}
-                                       className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm"
-                                       placeholder="Пароль ещё раз"/>
-                                {errors?.confirm_password && <p className='form-error-text mb-3 -mt-4 p-2 rounded-md border border-red-400'>{errors?.confirm_password?.message}</p>}
-                            </div>
+
                         </div>
                         <div>
                             <button type="submit" disabled={!isValid}
@@ -123,7 +94,7 @@ function RegistrationPage() {
                                           clipRule="evenodd"/>
                                   </svg>
                                 </span>
-                                Зарегистрироваться
+                                Редактировать
                             </button>
                         </div>
                     </form>
@@ -134,4 +105,4 @@ function RegistrationPage() {
     )
 }
 
-export default RegistrationPage;
+export default EditLeaderPage;

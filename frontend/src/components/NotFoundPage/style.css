@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Marmelad&family=Montserrat:wght@400;500;600;800&display=swap');
+
+.notfound-main__text-block{
+    font-family: 'Amatic SC', cursive;
+}
+.notfound-main__text-block h2{
+    color:#8F7962;
+}
+.notfound-main__button{
+    background:#C1D1AA;
+    padding: 41px 45px;
+    border-radius: 20px;
+    color:#625C60;
+}
+@media screen and (max-width: 850px) {
+    .notfound-main{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .notfound-main__text-block{
+        margin-right: 0;
+        margin-top:30px;
+    }
+    .notfound-main__button{
+        padding:31px 35px;
+    }
+    .notfound-main__illustration{
+        margin-left:40px;
+    }
+}
+@media screen and (min-width: 640px) and (max-width: 767px){
+    .notfound-main__illustration{
+        margin-left:30px;
+    }
+}
+@media screen and (max-width: 640px){
+    .notfound-main__illustration{
+        margin-left:20px;
+    }
+    .notfound-main__illustration__image{
+        width:144px;
+    }
+    .notfound-main__text-block h2{
+        font-size: 3rem;
+    }
+    .notfound-main__text-block p{
+        font-size: 2.25rem;
+    }
+    .notfound-main__button{
+        padding:19px 20px;
+    }
+}
