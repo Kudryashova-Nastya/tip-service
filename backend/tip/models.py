@@ -56,6 +56,8 @@ class Leader(models.Model):
     phone = models.CharField(max_length=20, verbose_name="Номер телефона", null=True, unique=True)
     first_name = models.CharField(max_length=40)
     last_name = models.CharField(max_length=20)
+    username = models.CharField(max_length=20, verbose_name='username', unique=True)
+    password = models.CharField(max_length=20, verbose_name='password')
 
     def __str__(self):
         return f'{self.last_name}, {self.first_name}'
