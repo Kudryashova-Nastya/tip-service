@@ -48,10 +48,17 @@ class BranchModelViewSet(viewsets.ModelViewSet):  # crud, patch, head
 
 class BranchesByLeaderViewSet(viewsets.ModelViewSet):
 	serializer_class = BranchSerializer
+	permission_classes = (IsAuthenticated,)
 
-	def get_queryset(self):
-		leader = self.kwargs['leader']
-		return Branch.objects.filter(leader=leader)
+	def list(self, request, *args, **kwargs):
+		leader = Leader.objects.get(user=request.user.pk)
+		branch = Branch.objects.filter(leader=leader.id)
+		branch_serializer = BranchSerializer(branch)
+		return Response(branch_serializer.data)
+
+	# def get_queryset(self):
+	# 	leader = self.kwargs['leader']
+	# 	return Branch.objects.filter(leader=leader)
 
 
 class StaffModelViewSet(viewsets.ModelViewSet):  # crud, patch, head

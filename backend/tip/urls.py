@@ -11,7 +11,7 @@ urlpatterns = [
 ]
 
 router = DefaultRouter()
-router.register(r'branches_by_leader/(?P<leader>.+)', BranchesByLeaderViewSet, basename='branches_by_leader')
+router.register('branches_by_leader', BranchesByLeaderViewSet, basename='branches_by_leader')
 router.register(r'leader', LeaderModelViewSet, basename='leader')
 router.register(r'staff', StaffModelViewSet, basename='staff')
 router.register(r'staff_by_branch/(?P<branch>.+)', StaffByBranchViewSet, basename='staff_by_branch')
