@@ -12,6 +12,7 @@ import AccountEmployees from "./components/AccountEmployees/AccountEmployees";
 import StaffRegistrationPage from "./components/StaffRegistrationPage/StaffRegistrationPage";
 import AddBranchPage from "./components/AddBranchPage/AddBranchPage";
 import EditBranchPage from "./components/EditBranchPage/EditBranchPage";
+import EditStaffPage from "./components/EditStaffPage/EditStaffPage";
 
 const App = observer(() => {
     return (
@@ -26,7 +27,7 @@ const App = observer(() => {
                         <Route path="leader/add-branch" element={<AddBranchPage />} />
                         <Route path="leader/edit-branch" element={<EditBranchPage />} />
                         <Route path="leader/add-staff" element={<StaffRegistrationPage />} />
-                        {/*<Route path="leader/edit-staff" element={<EditStaff />} />*/}
+                        <Route path="leader/edit-staff" element={<EditStaffPage />} />
                         {/*<Route path="leader/edit" element={<EditLeader />} />*/}
                         <Route path="employee/" element={<AccountEmployees />} />
                     </Route>
