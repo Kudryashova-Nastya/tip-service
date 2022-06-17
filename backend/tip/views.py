@@ -71,7 +71,7 @@ class StaffByBranchViewSet(viewsets.ModelViewSet):
 class PaymentModelViewSet(viewsets.ModelViewSet):  # crud, patch, head
 	serializer_class = PaymentSerializer
 	queryset = Payment.objects.all()
-	permission_classes = (IsAuthenticated,)
+	permission_classes = (AllowAny,)
 
 
 class PaymentsByStaffViewSet(viewsets.ModelViewSet):
