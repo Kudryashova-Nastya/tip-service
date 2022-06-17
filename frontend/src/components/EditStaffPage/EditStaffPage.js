@@ -5,7 +5,7 @@ import {useForm, Controller} from "react-hook-form";
 import InputMask from 'react-input-mask';
 
 
-function StaffRegistrationPage() {
+function EditStaffPage() {
     const {
         register,
         formState: {errors, isValid},
@@ -34,7 +34,7 @@ function StaffRegistrationPage() {
                     <div>
                         <img className="mx-auto h-20 w-auto" src={require('../../media/logo-main.png')} alt="Workflow"/>
                         <h1 className="mt-6 text-center text-3xl font-extrabold">
-                            Добавление сотрудника
+                            Редактирование сотрудника
                         </h1>
                     </div>
                     <form className="mt-8 space-y-6 w-1/3" action="#" method="POST" onSubmit={handleSubmit(onSubmit)}>
@@ -109,7 +109,7 @@ function StaffRegistrationPage() {
                                            required: "Это поле обязательно к заполнению"
                                        })}
                                        className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm"
-                                       />
+                                />
                                 {errors?.photo && <p className='form-error-text mb-3 -mt-4 p-2 rounded-md border border-red-400'>{errors?.photo?.message}</p>}
                             </div>
                         </div>
@@ -136,4 +136,4 @@ function StaffRegistrationPage() {
     )
 }
 
-export default StaffRegistrationPage;
+export default EditStaffPage;

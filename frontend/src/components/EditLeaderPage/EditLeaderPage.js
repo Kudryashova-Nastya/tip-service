@@ -5,7 +5,7 @@ import {useForm, Controller} from "react-hook-form";
 import InputMask from 'react-input-mask';
 
 
-function StaffRegistrationPage() {
+function EditLeaderPage() {
     const {
         register,
         formState: {errors, isValid},
@@ -34,10 +34,10 @@ function StaffRegistrationPage() {
                     <div>
                         <img className="mx-auto h-20 w-auto" src={require('../../media/logo-main.png')} alt="Workflow"/>
                         <h1 className="mt-6 text-center text-3xl font-extrabold">
-                            Добавление сотрудника
+                            Ваши данные
                         </h1>
                     </div>
-                    <form className="mt-8 space-y-6 w-1/3" action="#" method="POST" onSubmit={handleSubmit(onSubmit)}>
+                    <form className="mt-8 space-y-6 w-1/3" onSubmit={handleSubmit(onSubmit)}>
                         <div className="rounded-md shadow-sm -space-y-px reg">
                             <div>
                                 <label htmlFor="first_name" className="sr-only">Имя и отчество</label>
@@ -59,59 +59,28 @@ function StaffRegistrationPage() {
                                        placeholder="Фамилия"/>
                                 {errors?.last_name && <p className='form-error-text mb-3 -mt-4 p-2 rounded-md border border-red-400'>{errors?.last_name?.message}</p>}
                             </div>
-
                             <div>
-                                <label htmlFor="card_number" className="sr-only">Номер банковской карты</label>
+                                <label htmlFor="phone" className="sr-only">Телефон</label>
                                 <Controller
                                     control={control}
-                                    name="card_number"
+                                    name="phone"
                                     render={({ field: { onChange, ref } }) => (
                                         <InputMask
-                                            mask="9999 9999 9999 9999"
+                                            mask="+7 (999) 999-99-99"
                                             onChange={onChange}
                                             inputRef={ref}
-                                            id="card_number" type="tel"
+                                            id="phone" type="tel"
                                             className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm"
-                                            placeholder="Номер банковской карты"
+                                            placeholder="Телефон"
                                         />
                                     )}
-                                    {...register("card_number", {
+                                    {...register("phone", {
                                         required: "Это поле обязательно к заполнению"
                                     })}
                                 />
-                                {errors?.card_number && <p className='form-error-text mb-3 -mt-4 p-2 rounded-md border border-red-400'>{errors?.card_number?.message}</p>}
+                                {errors?.phone && <p className='form-error-text mb-3 -mt-4 p-2 rounded-md border border-red-400'>{errors?.phone?.message}</p>}
                             </div>
 
-                            <div>
-                                <label htmlFor="password" className="sr-only">Пароль</label>
-                                <input id="password" name="password" type="password"
-                                       {...register("password", {
-                                           required: "Это поле обязательно к заполнению"
-                                       })}
-                                       className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none  focus:z-10 sm:text-sm"
-                                       placeholder="Пароль"/>
-                                {errors?.password && <p className='form-error-text mb-3 -mt-4 p-2 rounded-md border border-red-400'>{errors?.password?.message}</p>}
-                            </div>
-                            <div>
-                                <label htmlFor="confirm_password" className="sr-only">Подтверждение пароля</label>
-                                <input id="confirm_password" name="confirm_password" type="password"
-                                       {...register("confirm_password", {
-                                           required: "Это поле обязательно к заполнению"
-                                       })}
-                                       className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm"
-                                       placeholder="Пароль ещё раз"/>
-                                {errors?.confirm_password && <p className='form-error-text mb-3 -mt-4 p-2 rounded-md border border-red-400'>{errors?.confirm_password?.message}</p>}
-                            </div>
-                            <div>
-                                <label htmlFor="photo" className="sr-only">Фотография</label>
-                                <input id="photo" name="photo" type="file"
-                                       {...register("photo", {
-                                           required: "Это поле обязательно к заполнению"
-                                       })}
-                                       className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm"
-                                       />
-                                {errors?.photo && <p className='form-error-text mb-3 -mt-4 p-2 rounded-md border border-red-400'>{errors?.photo?.message}</p>}
-                            </div>
                         </div>
                         <div>
                             <button type="submit" disabled={!isValid}
@@ -125,7 +94,7 @@ function StaffRegistrationPage() {
                                           clipRule="evenodd"/>
                                   </svg>
                                 </span>
-                                Добавить
+                                Редактировать
                             </button>
                         </div>
                     </form>
@@ -136,4 +105,4 @@ function StaffRegistrationPage() {
     )
 }
 
-export default StaffRegistrationPage;
+export default EditLeaderPage;
