@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import {observer} from "mobx-react";
 import LeaderStore from "../../../store/LeaderStore";
+import {Link} from "react-router-dom";
+import edit from "../../../media/edit.png";
 
 
 const LeaderInfo = observer( () =>{
@@ -10,6 +12,13 @@ const LeaderInfo = observer( () =>{
             <div className='w-full grid grid-cols-1 md:grid-cols-12 items-center h-20'>
                 <div className="data col-start-4 col-span-2 md:grid-cols-1">
                     <span className="data">Ваши данные</span>
+                </div>
+                <div className="ml-20 col-start-9 col-span-2 md:grid-cols-1">
+                    <Link to="/leader/edit">
+                        <div className="round">
+                            <img src={edit} className="img-edit" alt="редактировать данные"/>
+                        </div>
+                    </Link>
                 </div>
             </div>
             <div className='w-full grid grid-cols-1 md:grid-cols-12 items-center'>
