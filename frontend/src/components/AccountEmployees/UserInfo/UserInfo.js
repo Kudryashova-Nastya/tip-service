@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import './UserInfo.css'
+import avatar from '../../../media/ВАЛЕРИЙ.jpg'
 
 
 class UserInfo extends Component{
@@ -10,7 +11,7 @@ class UserInfo extends Component{
         return (
             <div>
                 <div className='w-full grid grid-cols-1 md:grid-cols-12 items-center h-20'>
-                    <div className="data col-start-3 col-span-2 md:grid-cols-1 ml-1">
+                    <div className="data col-start-4 col-span-2 md:grid-cols-1">
                         <span className="data">Ваши данные</span>
                     </div>
                 </div>
@@ -26,7 +27,7 @@ class UserInfo extends Component{
                                     <p className="mb-1">Логин: user1</p>
                                 </div>
                                 <div className="block_photo_staff col-start-10 col-span-3 md:grid-cols-1">
-                                    <img className="mt-2 photo_staff h-40 w-40 object-cover object-center rounded-full" alt="photo_staff"/>
+                                    <img className="mt-2 photo_staff h-40 w-40 object-cover object-center rounded-full" src={avatar} alt="photo_staff"/>
                                 </div>
                             </div>
                         </div>

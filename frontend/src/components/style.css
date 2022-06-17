@@ -69,7 +69,8 @@ nav .logo_text{
     background-color: #91B56B;
 }
 .data{
-    text-align: end;
+    /*text-align: end;*/
+    margin-left: 10px;
     font-size: 20px;
     font-family: 'Marmelad', sans-serif;
 }
