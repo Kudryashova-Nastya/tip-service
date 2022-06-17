@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {useState} from "react";
 import './main.css'
 import './fullpage.css'
 import {Link} from "react-router-dom";
@@ -8,12 +8,11 @@ import StarRating from "./StarRating/StarRange";
 import {useForm} from "react-hook-form";
 
 function MainPage() {
-    const state = {
+    const [state, setState] = useState({
         starsSelected: 1,
-    }
+    })
 
-    const change = (starsSelected) =>
-        this.setState({starsSelected});
+    const change = (starsSelected) => setState({starsSelected});
 
 
     const starsSelected = state.starsSelected
@@ -136,7 +135,7 @@ function MainPage() {
             <div className="section" id="transfer-money">
                 <h1 className="last">Перевод чаевых сотруднику</h1>
                 <img alt="icon" src={require("../../media/qr-code.png")} className="img-qr"/>
-                <form method="POST" action="" onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit(onSubmit)}>
 
                     <div className="form-main" >
                         <div className="form-col">
@@ -148,7 +147,7 @@ function MainPage() {
                             {errors?.staff && <p className='main-form-error-text mb-3 -mt-4 p-4 rounded-md border border-red-400'>{errors?.staff?.message}</p>}
 
                             <label htmlFor="sum_tea">Введите сумму чаевых:</label>
-                            <input id="sum_tea" name="sum_tea" type="number" placeholder="cумма..."
+                            <input id="sum_tea" type="number" placeholder="cумма..."
                                    {...register("sum_tea", {
                                        required: "Это поле обязательное"
                                    })}
@@ -157,17 +156,23 @@ function MainPage() {
                         </div>
                         <div className="form-col">
                             <label htmlFor="review">Отзыв на сотрудника:</label>
-                            <input id="review" name="review" placeholder="комментарий..." required/>
+                            <input id="review" placeholder="комментарий..."
+                                   {...register("review", {
+                                       required: "Это поле обязательное"
+                                   })}/>
                             <label htmlFor="rating">Оценка:</label>
                             <div className="star-rating">
                                 <div className="App">
                                     <StarRating starsSelected={starsSelected} totalStars={5} onRate={change}/>
                                 </div>
+                                <input type="hidden" {...register("rating", {
+                                    required: ""
+                                })} value={state.starsSelected}/>
                             </div>
                         </div>
                     </div>
 
-                    <button type="submit" className="button-form">
+                    <button type="submit" className="button-form" disabled={!isValid}>
                         <span className="text-logo-el">Дать </span>
                         <span className="text-logo-el">на </span>
                         <span className="text-logo-el">Чай</span>
