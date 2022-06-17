@@ -78,10 +78,8 @@ class Helper {
         if (req.ok && res?.detail == null) {
             this.setToken(res);
             this.isLoggedIn()
-            console.log('aaaaa')
             return false
         } else {
-            console.log('bbbbbbbbbb')
             runInAction(() => this.isLogged = false)
             return JSON.stringify(res.detail)
         }
@@ -93,12 +91,16 @@ class Helper {
         }
 
         if (this.isExpired(this.getExpirationDate(this._token.access))) {
-            const updatedToken = await fetch(`${this.host}/token/refresh/`, {
+            const POSTCORS = {
                 method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
                 body: {
                     "refresh": JSON.stringify(this._token.refresh)
                 }
-            }).then(r => r.json());
+            }
+            const updatedToken = await fetch(`${this.host}/token/refresh/`, POSTCORS).then(r => r.json());
 
             this.setToken(updatedToken);
             this.isLoggedIn()

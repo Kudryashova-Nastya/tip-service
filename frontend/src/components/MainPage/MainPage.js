@@ -6,6 +6,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll/lib/anchor-link";
 
 import StarRating from "./StarRating/StarRange";
 import {useForm} from "react-hook-form";
+import MainStore from "../../store/MainStore";
 
 function MainPage() {
     const [state, setState] = useState({
@@ -20,13 +21,16 @@ function MainPage() {
     const {
         register,
         formState: {errors, isValid},
-        handleSubmit
+        handleSubmit,
+        reset
     } = useForm({
         mode: "onChange"
     })
 
     const onSubmit = (data) => {
-        alert(JSON.stringify(data))
+        data = {...data, "rating": starsSelected.toString()}
+        MainStore.addRequest(data).then()
+        reset()
     }
 
     return (
@@ -136,15 +140,18 @@ function MainPage() {
                 <h1 className="last">Перевод чаевых сотруднику</h1>
                 <img alt="icon" src={require("../../media/qr-code.png")} className="img-qr"/>
                 <form onSubmit={handleSubmit(onSubmit)}>
-
-                    <div className="form-main" >
+                    {MainStore.errorAuth ?
+                        <p className='main-form-error-text mb-3 -mt-4 p-4 rounded-md border border-red-400'>
+                            {MainStore.errorAuth}</p> : null}
+                    <div className="form-main">
                         <div className="form-col">
                             <label htmlFor="staff">Введите ID сотрудника, указанный на чеке рядом с QR-кодом:</label>
                             <input id="staff" name="staff" type="number" placeholder="ID сотрудника..." min="1"
                                    {...register("staff", {
                                        required: "Это поле обязательное"
                                    })}/>
-                            {errors?.staff && <p className='main-form-error-text mb-3 -mt-4 p-4 rounded-md border border-red-400'>{errors?.staff?.message}</p>}
+                            {errors?.staff &&
+                                <p className='main-form-error-text mb-3 -mt-4 p-4 rounded-md border border-red-400'>{errors?.staff?.message}</p>}
 
                             <label htmlFor="sum_tea">Введите сумму чаевых:</label>
                             <input id="sum_tea" type="number" placeholder="cумма..."
@@ -152,7 +159,8 @@ function MainPage() {
                                        required: "Это поле обязательное"
                                    })}
                                    min="1"/>
-                            {errors?.sum_tea && <p className='main-form-error-text mb-3 -mt-4 p-4 rounded-md border border-red-400'>{errors?.sum_tea?.message}</p>}
+                            {errors?.sum_tea &&
+                                <p className='main-form-error-text mb-3 -mt-4 p-4 rounded-md border border-red-400'>{errors?.sum_tea?.message}</p>}
                         </div>
                         <div className="form-col">
                             <label htmlFor="review">Отзыв на сотрудника:</label>
@@ -165,9 +173,6 @@ function MainPage() {
                                 <div className="App">
                                     <StarRating starsSelected={starsSelected} totalStars={5} onRate={change}/>
                                 </div>
-                                <input type="hidden" {...register("rating", {
-                                    required: ""
-                                })} value={state.starsSelected}/>
                             </div>
                         </div>
                     </div>
