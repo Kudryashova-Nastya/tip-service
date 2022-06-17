@@ -4,6 +4,7 @@ import StaffInBranch from "../StaffInBranch/StaffInBranch";
 import {observer} from "mobx-react";
 import LeaderStore from "../../../store/LeaderStore";
 import plus_light from "../../../media/plus-light.png";
+import plus from "../../../media/plus.png";
 import {Link} from "react-router-dom";
 
 const Branches = observer( () =>
@@ -13,6 +14,15 @@ const Branches = observer( () =>
             <div className='w-full grid grid-cols-1 md:grid-cols-12 items-center h-20'>
                 <div className="data col-start-4 col-span-2 md:grid-cols-1">
                     <span className="data">Филиалы</span>
+                </div>
+            </div>
+            <div className='w-full grid md:grid-cols-12 items-center'>
+                <div className="w-full grid grid-cols-1 col-start-4 col-span-6">
+                    <Link className="mb-4" to="/leader/add-branch">
+                    <div className='flex items-center'>
+                            <img src={plus} className="img-add" alt="добавить филиал"/>
+                    </div>
+                    </Link>
                 </div>
             </div>
             <div className='w-full grid grid-cols-1 md:grid-cols-12 items-center'>
