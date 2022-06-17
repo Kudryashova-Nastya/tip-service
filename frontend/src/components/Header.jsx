@@ -1,7 +1,9 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import {observer} from "mobx-react";
+import Auth from "../store/Auth";
 
-const Header = () => {
+const Header = observer(() =>  {
   return (
       <header>
         <nav className="flex items-center justify-between p-3 h-20">
@@ -15,16 +17,16 @@ const Header = () => {
               </a>
             </div>
             <div className="in">
-              <Link to="/logout" className="text-sm px-4 py-2 leading-none lg:mt-0">Личный кабинет</Link>
+              <Link to="/login" onClick={Auth.logout} className="text-sm px-4 py-2 leading-none lg:mt-0">Личный кабинет</Link>
             </div>
             <div className="mr-5">
-              <Link to="/logout">
+              <Link to="/login" onClick={Auth.logout}>
                 <img className="mx-auto h-5 w-auto" src={require('../media/logout.png')} alt="logout"/>
               </Link>
             </div>
         </nav>
       </header>
   );
-};
+});
 
 export default Header;
