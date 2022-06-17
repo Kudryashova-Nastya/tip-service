@@ -100,16 +100,16 @@ function RegistrationPage() {
                                        placeholder="Пароль"/>
                                 {errors?.password && <p className='form-error-text mb-3 -mt-4 p-2 rounded-md border border-red-400'>{errors?.password?.message}</p>}
                             </div>
-                            <div>
-                                <label htmlFor="confirm_password" className="sr-only">Подтверждение пароля</label>
-                                <input id="confirm_password" name="confirm_password" type="password"
-                                       {...register("confirm_password", {
-                                           required: "Это поле обязательно к заполнению"
-                                       })}
-                                       className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm"
-                                       placeholder="Пароль ещё раз"/>
-                                {errors?.confirm_password && <p className='form-error-text mb-3 -mt-4 p-2 rounded-md border border-red-400'>{errors?.confirm_password?.message}</p>}
-                            </div>
+                            {/*<div>*/}
+                            {/*    <label htmlFor="confirm_password" className="sr-only">Подтверждение пароля</label>*/}
+                            {/*    <input id="confirm_password" name="confirm_password" type="password"*/}
+                            {/*           {...register("confirm_password", {*/}
+                            {/*               required: "Это поле обязательно к заполнению"*/}
+                            {/*           })}*/}
+                            {/*           className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:z-10 sm:text-sm"*/}
+                            {/*           placeholder="Пароль ещё раз"/>*/}
+                            {/*    {errors?.confirm_password && <p className='form-error-text mb-3 -mt-4 p-2 rounded-md border border-red-400'>{errors?.confirm_password?.message}</p>}*/}
+                            {/*</div>*/}
                         </div>
                         <div>
                             <button type="submit" disabled={!isValid}
