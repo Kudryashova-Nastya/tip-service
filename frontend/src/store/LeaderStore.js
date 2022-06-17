@@ -10,7 +10,38 @@ class LeaderStore {
     makeAutoObservable(this);
   }
 
-  ledInfo = null;
+  ledInfo = {
+    id: 1,
+    first_name: "Олег Алексеевич",
+    last_name: "Нечипоренко",
+    phone: "+7(495)-666-66-66",
+    user: "leader1"
+  };
+
+  branchInfo = {
+    id: 1,
+    name: "Филиал №1",
+    address: "г. Москва, м. ВДНХ",
+    leader: "Нечипоренко Олег Алексеевич",
+    organization: 'ООО "Шоколадница"'
+  };
+
+  staffInBranchInfo = [{
+    id: 1,
+    first_name: "Валерий Валерьевич",
+    last_name: "Жмышенко",
+    card_number: "6666 6666 6666 6666",
+    user: "staff1",
+    id_branch: 1
+  },
+    {
+      id: 2,
+      first_name: "Bette Tina",
+      last_name: "Porter",
+      card_number: "6666 6666 6666 6666",
+      user: "my Love",
+      id_branch: 1
+    }];
 
   fetchInfo = async (id) => {
     const CORS = Auth.getCORS()
