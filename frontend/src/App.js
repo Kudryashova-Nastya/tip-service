@@ -13,6 +13,7 @@ import StaffRegistrationPage from "./components/StaffRegistrationPage/StaffRegis
 import AddBranchPage from "./components/AddBranchPage/AddBranchPage";
 import EditBranchPage from "./components/EditBranchPage/EditBranchPage";
 import EditStaffPage from "./components/EditStaffPage/EditStaffPage";
+import EditLeaderPage from "./components/EditLeaderPage/EditLeaderPage";
 
 const App = observer(() => {
     return (
@@ -21,14 +22,14 @@ const App = observer(() => {
                 <Route path="/" element={<MainPage/>}/>
                 <Route path="/login" element={<LoginPage/>}/>
                 <Route path="/registration" element={<RegistrationPage/>}/>
-                    <Route path="/" element={helper._token ? <ComponentWithHeader/> : <Navigate to="/login" replace />} >
-                    {/*<Route path="/" element={<ComponentWithHeader/> } >*/}
+                    {/*<Route path="/" element={helper._token ? <ComponentWithHeader/> : <Navigate to="/login" replace />} >*/}
+                    <Route path="/" element={<ComponentWithHeader/> } >
                         <Route path="leader/" element={<LeaderPage/>}/>
                         <Route path="leader/add-branch" element={<AddBranchPage />} />
                         <Route path="leader/edit-branch" element={<EditBranchPage />} />
                         <Route path="leader/add-staff" element={<StaffRegistrationPage />} />
                         <Route path="leader/edit-staff" element={<EditStaffPage />} />
-                        {/*<Route path="leader/edit" element={<EditLeader />} />*/}
+                        <Route path="leader/edit" element={<EditLeaderPage />} />
                         <Route path="employee/" element={<AccountEmployees />} />
                     </Route>
                 <Route path="*" element={<NotFoundPage />} />
