@@ -50,9 +50,9 @@ const LoginPage = observer(() => {
                             Авторизация
                         </h1>
                     </div>
-                    {authErrors ? <div>Ошибка {authErrors}</div> : null}
                     <form className="mt-8 space-y-6 w-1/3" onSubmit={handleSubmit(onSubmit)}>
                         {/*<input type="hidden" name="remember" value="true"/>*/}
+                        {authErrors ? <p className='form-error-text mb-3 -mt-4 p-2 rounded-md border border-red-400'>Ошибка {authErrors}</p> : null}
                         <div className="rounded-md shadow-sm -space-y-px">
                             <div>
                                 <label htmlFor="username" className="sr-only">Логин</label>

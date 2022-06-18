@@ -36,9 +36,9 @@ class LeaderStore {
   },
     {
       id: 2,
-      first_name: "Bette Tina",
-      last_name: "Porter",
-      card_number: "6666 6666 6666 6666",
+      first_name: "Валерия Валерьевна",
+      last_name: "Жмых",
+      card_number: "6666 6666 6666 6667",
       user: "my Love",
       id_branch: 1
     }];
